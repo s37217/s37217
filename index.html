@@ -1,31 +1,115 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<title>หน้าแนะน;าตัวของฉัน</title>
-<style>
-body {
-background-color: #e3b1f2; color: #333;
-text-align: center; padding: 50px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | Bunyanuch Keanna</title>
 
-}
-.card {
-background: white; border-radius: 0px;
-box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-max-width: 500px; margin: 0 auto; padding: 30px;
-
-}
-h1 { color: #2c3e50; }
-p { font-size: 18px; line-height: 1.6; }
-</style>
+    <!-- เชื่อมต่อไฟล์ CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="card">
-<h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน </h1>
-<p>สวัสดีค่ะ! ดิฉันชื่อ <strong>บุณยานุช เขียนนา (Bunyanuch keanna)</strong></p>
-<p>ขณะนี้กำาลังศึกษา/สนใจด้าน Biology and Chemistry</p>
-<p>นี่คือเว็บไซต์แรกขอคุณมที่โฮสต์บน GitHub Pages!</p>
-  <a href="portfolio.html" class="btn"> ดูแฟ้มผลงาน</a>
-</div>
+
+    <!-- ==================== หน้าแรก ==================== -->
+
+    <header class="hero">
+        <h1>Welcome to my portfolio</h1>
+    </header>
+
+
+    <main class="container">
+
+        <!-- กล่องที่ 1 : ข้อมูลส่วนตัว -->
+        <section class="card">
+
+            <h2>ข้อมูลส่วนตัวของฉัน</h2>
+
+            <!--
+                เปลี่ยน profile.jpg เป็นชื่อไฟล์รูปของคุณ
+                เช่น cake.jpg
+            -->
+            <img src="images/profile.jpg"
+                 alt="รูปภาพของ Bunyanuch Keanna"
+                 class="profile-image">
+
+            <div class="personal-info">
+                <p>ชื่อ น.ส.บุณยานุช เขียนนา</p>
+                <p>Name Bunyanuch Keanna</p>
+                <p>กำลังศึกษาอยู่ระดับชั้นมัธยมศึกษาปีที่ 6</p>
+                <p>แผนการเรียน วิทยาศาสตร์-คณิตศาสตร์ (MSEP)</p>
+            </div>
+
+        </section>
+
+
+        <!-- กล่องที่ 2 : เป้าหมายและความสนใจ -->
+        <section class="card">
+
+            <h2>เป้าหมายและความสนใจในการศึกษาต่อ</h2>
+
+            <div class="content-text">
+
+                <p>
+                    ฉันมีความสนใจที่จะศึกษาต่อ คณะพยาบาลศาสตร์
+                    สาขาพยาบาล มหาวิทยาลัยมหิดล
+                </p>
+
+                <p>
+                    ตั้งแต่ระดับมัธยมศึกษาปีที่ 4 ฉันได้ไป Open House
+                    ของมหาวิทยาลัยมหิดล และได้เข้าร่วมกิจกรรมของ
+                    คณะพยาบาลศาสตร์ ซึ่งในกิจกรรมได้เรียนรู้เกี่ยวกับ
+                    การปฐมพยาบาล รวมถึงได้จำลองการดูแลรักษากับผู้ป่วย
+                    ทำให้เกิดความชอบและสนใจในสายอาชีพนี้ขึ้น
+                </p>
+
+                <p>
+                    หลังจากนั้นจึงได้ศึกษาเกี่ยวกับการเรียนพยาบาล
+                    รวมถึงการประกอบอาชีพ และเกิดความตั้งใจที่จะศึกษา
+                    ต่อในคณะพยาบาลศาสตร์
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- กล่องที่ 3 : ผลงานและกิจกรรม -->
+        <section class="card">
+
+            <h2>ผลงานและกิจกรรมที่ได้เข้าร่วม</h2>
+
+            <p class="center-text">
+                สามารถดูผลงานและกิจกรรมทั้งหมดของฉันได้ที่หน้าถัดไป
+            </p>
+
+            <!-- ปุ่มไปหน้าที่ 2 -->
+            <a href="activities.html" class="button">
+                ดูผลงานและกิจกรรม
+            </a>
+
+        </section>
+
+
+        <!-- กล่องที่ 4 : ช่องทางการติดต่อ -->
+        <section class="card">
+
+            <h2>ช่องทางการติดต่อ</h2>
+
+            <div class="contact-info">
+                <p>เบอร์โทรศัพท์ : 0962132648</p>
+                <p>Gmail : s37217@banbung.ac.th</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ส่วนท้ายเว็บไซต์ -->
+    <footer>
+        <p>© 2026 Bunyanuch Keanna</p>
+    </footer>
+
 </body>
 </html>
