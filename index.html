@@ -1,184 +1,100 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
     <meta charset="UTF-8">
-
-    <!-- ทำให้เว็บไซต์แสดงผลได้ดีบนโทรศัพท์ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to my portfolio</title>
+    <style>
+        /* จัดการพื้นหลังหน้าแรก */
+        body {
+            background-color: #543a59;
+            font-family: 'Tahoma', 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #000000; /* ข้อความทั่วไปเป็นสีดำ */
+        }
 
-    <title>Welcome to my portfolio | Bunyanuch Keanna</title>
+        /* หัวข้อหลักตรงกลาง */
+        .main-title {
+            text-align: center;
+            color: #ba9a38;
+            font-size: 2.5rem;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
 
-    <!-- เชื่อมไฟล์ CSS -->
-    <link rel="stylesheet" href="style.css">
+        /* กล่องข้อความพื้นหลังขาวอ่อนบาง */
+        .card {
+            background-color: rgba(255, 255, 255, 0.85); /* สีขาวโปร่งแสง */
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* หัวข้อหลักในแต่ละกล่อง */
+        .card h2 {
+            color: #dc6986;
+            margin-top: 0;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #dc6986;
+            padding-bottom: 8px;
+        }
+
+        /* ส่วนรูปภาพโปรไฟล์ */
+        .profile-img-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #dc6986;
+        }
+
+        /* รายละเอียดข้อความ */
+        .card p {
+            line-height: 1.6;
+            font-size: 1.05rem;
+            margin: 8px 0;
+        }
+
+        /* ปุ่มกดไปยังหน้าที่สอง */
+        .btn-link {
+            display: inline-block;
+            background-color: #dc6986;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-link:hover {
+            background-color: #ba9a38;
+        }
+    </style>
 </head>
-
 <body>
 
-    <!-- ==============================
-         ส่วนหัวของหน้าแรก
-    =============================== -->
-
-    <header class="hero">
-        <h1>Welcome to my portfolio</h1>
-    </header>
-
-
-    <!-- ==============================
-         เนื้อหาหลัก
-    =============================== -->
-
-    <main class="container">
-
-
-        <!-- ==============================
-             กล่องที่ 1 : ข้อมูลส่วนตัว
-        =============================== -->
-
-        <section class="card">
-
-            <h2>ข้อมูลส่วนตัวของฉัน</h2>
-
-
-            <!--
-                รูปภาพของคุณ
-
-                หากชื่อรูปเป็น profile.jpg
-                ให้ใช้แบบนี้
-
-                images/profile.jpg
-            -->
-
-            <img
-                src="images/profile.jpg"
-                alt="รูปภาพของบุณยานุช เขียนนา"
-                class="profile-image"
-            >
-
-
-            <!-- ข้อมูลส่วนตัว -->
-
-            <div class="personal-info">
-
-                <p>ชื่อ น.ส.บุณยานุช เขียนนา</p>
-
-                <p>Name Bunyanuch Keanna</p>
-
-                <p>กำลังศึกษาอยู่ระดับชั้นมัธยมศึกษาปีที่ 6</p>
-
-                <p>แผนการเรียน วิทยาศาสตร์-คณิตศาสตร์ (MSEP)</p>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ==============================
-             กล่องที่ 2 : เป้าหมายและความสนใจ
-        =============================== -->
-
-        <section class="card">
-
-            <h2>เป้าหมายและความสนใจในการศึกษาต่อ</h2>
-
-
-            <div class="content-text">
-
-                <p>
-                    ฉันมีความสนใจที่จะศึกษาต่อ
-                    คณะพยาบาลศาสตร์ สาขาพยาบาล
-                    มหาวิทยาลัยมหิดล
-                </p>
-
-
-                <p>
-                    ตั้งแต่ระดับมัธยมศึกษาปีที่ 4
-                    ฉันได้ไป Open House ของมหาวิทยาลัยมหิดล
-                    และได้เข้าร่วมกิจกรรมของคณะพยาบาลศาสตร์
-                    ซึ่งในกิจกรรมได้เรียนรู้เกี่ยวกับการปฐมพยาบาล
-                    รวมถึงได้จำลองการดูแลรักษากับผู้ป่วย
-                    ทำให้เกิดความชอบและสนใจในสายอาชีพนี้ขึ้น
-                </p>
-
-
-                <p>
-                    หลังจากนั้นจึงได้ศึกษาเกี่ยวกับการเรียนพยาบาล
-                    รวมถึงการประกอบอาชีพ
-                    และเกิดความตั้งใจที่จะศึกษาต่อในคณะพยาบาลศาสตร์
-                </p>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ==============================
-             กล่องที่ 3 : ผลงานและกิจกรรม
-        =============================== -->
-
-        <section class="card">
-
-            <h2>ผลงานและกิจกรรมที่ได้เข้าร่วม</h2>
-
-
-            <p class="center-text">
-                สามารถดูผลงานและกิจกรรมที่ได้เข้าร่วมทั้งหมด
-                ได้ที่หน้าถัดไป
-            </p>
-
-
-            <!-- ปุ่มไปหน้าที่ 2 -->
-
-            <a href="activities.html" class="portfolio-button">
-                ดูผลงานและกิจกรรม
-            </a>
-
-        </section>
-
-
-
-        <!-- ==============================
-             กล่องที่ 4 : ช่องทางการติดต่อ
-        =============================== -->
-
-        <section class="card">
-
-            <h2>ช่องทางการติดต่อ</h2>
-
-
-            <div class="contact-info">
-
-                <p>
-                    เบอร์โทรศัพท์ : 0962132648
-                </p>
-
-                <p>
-                    Gmail : s37217@banbung.ac.th
-                </p>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- ==============================
-         ส่วนท้ายเว็บไซต์
-    =============================== -->
-
-    <footer>
-
-        <p>
-            © 2026 Bunyanuch Keanna
-        </p>
-
-    </footer>
-
-
-</body>
-</html>
+    <h1 class="main-title">Welcome to my portfolio</h1>
+
+    <div class="card">
+        <h2>ข้อมูลส่วนตัวของฉัน</h2>
+        <div class="profile-img-container">
+            <img src="profile.jpg" alt="รูปภาพของบุณยานุช" class="profile-img">
+        </div>
+        <p><strong>ชื่อ:</strong> น.ส.บุณยานุช เขียนนา</p>
+        <p><strong>Name:</strong> Bunyanuch Keanna</p>
+        <p><strong>ระดับการศึกษา:</strong> กำลังศึกษาอยู่ระดับชั้นมัธยมศึกษาปีที่ 6</p>
+        <p><strong>แผนการเรียน:</strong> วิทยาศาสตร์-คณิตศาสตร์ (MSEP)</p>
+    </div>
+
+    <div class="card">
+        <h2>เป้าหมายและความสนใจในการศึกษาต่อ</h2>
