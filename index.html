@@ -4,131 +4,180 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <!-- ทำให้เว็บไซต์แสดงผลได้ดีบนโทรศัพท์ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio | Bunyanuch Keanna</title>
+    <title>Welcome to my portfolio | Bunyanuch Keanna</title>
 
+    <!-- เชื่อมไฟล์ CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-
-<body class="home-page">
+<body>
 
     <!-- ==============================
-         ส่วนหน้าแรก
+         ส่วนหัวของหน้าแรก
     =============================== -->
 
-    <main class="home-container">
-
-        <!-- หัวข้อ Portfolio -->
-
-        <h1 class="home-title">
-            portfolio
-        </h1>
+    <header class="hero">
+        <h1>Welcome to my portfolio</h1>
+    </header>
 
 
-        <!-- รูปภาพของฉัน -->
+    <!-- ==============================
+         เนื้อหาหลัก
+    =============================== -->
 
-        <!--
-            เปลี่ยน profile.jpg
-            เป็นชื่อไฟล์รูปของคุณได้
-        -->
-
-        <img
-            src="images/profile.jpg"
-            alt="รูปของบุณยานุช เขียนนา"
-            class="home-image"
-        >
+    <main class="container">
 
 
-        <!-- ข้อมูลใต้รูป -->
+        <!-- ==============================
+             กล่องที่ 1 : ข้อมูลส่วนตัว
+        =============================== -->
 
-        <div class="home-information">
+        <section class="card">
 
-            <h2>
-                น.ส.บุณยานุช เขียนนา
-            </h2>
+            <h2>ข้อมูลส่วนตัวของฉัน</h2>
 
-            <h3>
-                โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"
-            </h3>
 
-            <p>
-                คณะพยาบาลศาสตร์
+            <!--
+                รูปภาพของคุณ
+
+                หากชื่อรูปเป็น profile.jpg
+                ให้ใช้แบบนี้
+
+                images/profile.jpg
+            -->
+
+            <img
+                src="images/profile.jpg"
+                alt="รูปภาพของบุณยานุช เขียนนา"
+                class="profile-image"
+            >
+
+
+            <!-- ข้อมูลส่วนตัว -->
+
+            <div class="personal-info">
+
+                <p>ชื่อ น.ส.บุณยานุช เขียนนา</p>
+
+                <p>Name Bunyanuch Keanna</p>
+
+                <p>กำลังศึกษาอยู่ระดับชั้นมัธยมศึกษาปีที่ 6</p>
+
+                <p>แผนการเรียน วิทยาศาสตร์-คณิตศาสตร์ (MSEP)</p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             กล่องที่ 2 : เป้าหมายและความสนใจ
+        =============================== -->
+
+        <section class="card">
+
+            <h2>เป้าหมายและความสนใจในการศึกษาต่อ</h2>
+
+
+            <div class="content-text">
+
+                <p>
+                    ฉันมีความสนใจที่จะศึกษาต่อ
+                    คณะพยาบาลศาสตร์ สาขาพยาบาล
+                    มหาวิทยาลัยมหิดล
+                </p>
+
+
+                <p>
+                    ตั้งแต่ระดับมัธยมศึกษาปีที่ 4
+                    ฉันได้ไป Open House ของมหาวิทยาลัยมหิดล
+                    และได้เข้าร่วมกิจกรรมของคณะพยาบาลศาสตร์
+                    ซึ่งในกิจกรรมได้เรียนรู้เกี่ยวกับการปฐมพยาบาล
+                    รวมถึงได้จำลองการดูแลรักษากับผู้ป่วย
+                    ทำให้เกิดความชอบและสนใจในสายอาชีพนี้ขึ้น
+                </p>
+
+
+                <p>
+                    หลังจากนั้นจึงได้ศึกษาเกี่ยวกับการเรียนพยาบาล
+                    รวมถึงการประกอบอาชีพ
+                    และเกิดความตั้งใจที่จะศึกษาต่อในคณะพยาบาลศาสตร์
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==============================
+             กล่องที่ 3 : ผลงานและกิจกรรม
+        =============================== -->
+
+        <section class="card">
+
+            <h2>ผลงานและกิจกรรมที่ได้เข้าร่วม</h2>
+
+
+            <p class="center-text">
+                สามารถดูผลงานและกิจกรรมที่ได้เข้าร่วมทั้งหมด
+                ได้ที่หน้าถัดไป
             </p>
 
-            <p>
-                สาขาพยาบาลศาสตร์
-            </p>
 
-            <p>
-                มหาวิทยาลัยมหิดล
-            </p>
+            <!-- ปุ่มไปหน้าที่ 2 -->
 
-        </div>
+            <a href="activities.html" class="portfolio-button">
+                ดูผลงานและกิจกรรม
+            </a>
+
+        </section>
+
+
+
+        <!-- ==============================
+             กล่องที่ 4 : ช่องทางการติดต่อ
+        =============================== -->
+
+        <section class="card">
+
+            <h2>ช่องทางการติดต่อ</h2>
+
+
+            <div class="contact-info">
+
+                <p>
+                    เบอร์โทรศัพท์ : 0962132648
+                </p>
+
+                <p>
+                    Gmail : s37217@banbung.ac.th
+                </p>
+
+            </div>
+
+        </section>
+
 
     </main>
 
 
+
     <!-- ==============================
-         เมนูด้านล่าง
+         ส่วนท้ายเว็บไซต์
     =============================== -->
 
-    <nav class="bottom-nav">
+    <footer>
 
-        <a href="introduction.html">
+        <p>
+            © 2026 Bunyanuch Keanna
+        </p>
 
-            <span class="nav-number">
-                01
-            </span>
-
-            <span>
-                คำนำ
-            </span>
-
-        </a>
-
-
-        <a href="profile.html">
-
-            <span class="nav-number">
-                02
-            </span>
-
-            <span>
-                ประวัติส่วนตัว
-            </span>
-
-        </a>
-
-
-        <a href="activities.html">
-
-            <span class="nav-number">
-                03
-            </span>
-
-            <span>
-                ผลงานและกิจกรรม
-            </span>
-
-        </a>
-
-
-        <a href="contact.html">
-
-            <span class="nav-number">
-                04
-            </span>
-
-            <span>
-                ช่องทางการติดต่อ
-            </span>
-
-        </a>
-
-    </nav>
+    </footer>
 
 
 </body>
