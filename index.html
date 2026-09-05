@@ -1,95 +1,135 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to my portfolio</title>
-    <style>
-        /* กำหนดพื้นหลังของทั้งหน้าแรก */
-        body {
-            background-color: #1f1775;
-            font-family: 'Sarabun', sans-serif; /* แนะนำให้ใช้ฟอนต์ที่อ่านง่าย */
-            color: #000000;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
-        /* หัวข้อหลักตรงกลาง */
-        .main-title {
-            color: #ffffff;
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-        /* รูปแบบของกล่องข้อความพื้นหลังขาวอ่อนบาง (Semi-transparent white) */
-        .card {
-            background-color: rgba(255, 255, 255, 0.85); /* สีขาวแบบโปร่งแสง */
-            width: 90%;
-            max-width: 650px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
+    <title>Portfolio | Bunyanuch Keanna</title>
 
-        /* หัวข้อหลักในแต่ละกล่อง */
-        .card-title {
-            color: #ddc5ed;
-            margin-top: 0;
-            /* เนื่องจาก #ddc5ed เป็นสีสว่าง เมื่อวางบนพื้นหลังสีขาวอาจมองยาก จึงใส่เงาข้อความให้เด่นขึ้น */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
-        }
-
-        /* สไตล์สำหรับรูปภาพส่วนตัว */
-        .profile-img {
-            display: block;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%; /* ทำรูปเป็นทรงกลม */
-            margin: 15px 0;
-            border: 3px solid #1f1775;
-        }
-
-        /* สไตล์ปุ่มกดไปยังหน้าที่ 2 */
-        .btn-link {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #1f1775;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn-link:hover {
-            background-color: #3b2fb3;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-    <h1 class="main-title">Welcome to my portfolio</h1>
 
-    <div class="card">
-        <h2 class="card-title">ข้อมูลส่วนตัวของฉัน</h2>
-        
-        <img src="profile.jpg" alt="รูปถ่ายของฉัน" class="profile-img">
+<body class="home-page">
 
-        <p><strong>ชื่อ:</strong> น.ส.บุณยานุช เขียนนา</p>
-        <p><strong>Name:</strong> Bunyanuch Keanna</p>
-        <p>กำลังศึกษาอยู่ระดับชั้นมัธยมศึกษาปีที่ 6</p>
-        <p>แผนการเรียน วิทยาศาสตร์-คณิตศาสตร์ (MSEP)</p>
-    </div>
+    <!-- ==============================
+         ส่วนหน้าแรก
+    =============================== -->
 
-    <div class="card">
-        <h2 class="card-title">เป้าหมายและความสนใจในการศึกษาต่อ</h2>
-        <p>
-            ฉันมีความสนใจที่จะศึกษาต่อคณะพยาบาลศาสตร์ สาขาพยาบาลศาสตร์ มหาวิทยาลัยมหิดล 
-            เนื่องจาก
+    <main class="home-container">
+
+        <!-- หัวข้อ Portfolio -->
+
+        <h1 class="home-title">
+            portfolio
+        </h1>
+
+
+        <!-- รูปภาพของฉัน -->
+
+        <!--
+            เปลี่ยน profile.jpg
+            เป็นชื่อไฟล์รูปของคุณได้
+        -->
+
+        <img
+            src="images/profile.jpg"
+            alt="รูปของบุณยานุช เขียนนา"
+            class="home-image"
+        >
+
+
+        <!-- ข้อมูลใต้รูป -->
+
+        <div class="home-information">
+
+            <h2>
+                น.ส.บุณยานุช เขียนนา
+            </h2>
+
+            <h3>
+                โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"
+            </h3>
+
+            <p>
+                คณะพยาบาลศาสตร์
+            </p>
+
+            <p>
+                สาขาพยาบาลศาสตร์
+            </p>
+
+            <p>
+                มหาวิทยาลัยมหิดล
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==============================
+         เมนูด้านล่าง
+    =============================== -->
+
+    <nav class="bottom-nav">
+
+        <a href="introduction.html">
+
+            <span class="nav-number">
+                01
+            </span>
+
+            <span>
+                คำนำ
+            </span>
+
+        </a>
+
+
+        <a href="profile.html">
+
+            <span class="nav-number">
+                02
+            </span>
+
+            <span>
+                ประวัติส่วนตัว
+            </span>
+
+        </a>
+
+
+        <a href="activities.html">
+
+            <span class="nav-number">
+                03
+            </span>
+
+            <span>
+                ผลงานและกิจกรรม
+            </span>
+
+        </a>
+
+
+        <a href="contact.html">
+
+            <span class="nav-number">
+                04
+            </span>
+
+            <span>
+                ช่องทางการติดต่อ
+            </span>
+
+        </a>
+
+    </nav>
+
+
+</body>
+</html>
