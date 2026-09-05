@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Portfolio | Bunyanuch Keanna</title>
 
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
 
     <style>
 
-        /* =========================
-           RESET
-        ========================= */
+        /* =========================================
+           BASIC
+        ========================================= */
 
         * {
             margin: 0;
@@ -28,676 +39,1272 @@
         }
 
         body {
+
             font-family: "Kanit", sans-serif;
-            background: #120b18;
-            color: #FFFFFF;
+
+            color: #0000FF;
+
+            background: #FFFFFF;
+
             overflow-x: hidden;
         }
 
 
-        /* =========================
+        /* =========================================
            BACKGROUND
-        ========================= */
+        ========================================= */
 
         .background {
-            position: fixed;
-            inset: 0;
-            z-index: -10;
-            overflow: hidden;
-            background:
-                radial-gradient(circle at center, #3a183f 0%, #180d21 55%, #09060c 100%);
-        }
 
-        .background::before {
-            content: "";
-            position: absolute;
+            position: fixed;
+
             inset: 0;
+
+            z-index: -100;
+
+            overflow: hidden;
+
+            background-color: #FFFFFF;
+
             background-image:
-                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+
+                linear-gradient(
+                    #CCFFFF 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    #CCFFFF 1px,
+                    transparent 1px
+                );
+
             background-size: 45px 45px;
         }
 
 
-        /* =========================
-           KUROMI BACKGROUND
-        ========================= */
+        /* =========================================
+           CLOUDS
+        ========================================= */
 
-        .kuromi {
+        .cloud {
+
             position: absolute;
-            width: 130px;
-            opacity: 0.18;
-            user-select: none;
-            pointer-events: none;
-            animation: float 8s ease-in-out infinite;
-        }
 
-        .k1 {
-            left: 2%;
-            top: 5%;
-            transform: rotate(-15deg);
-        }
-
-        .k2 {
-            left: 17%;
-            top: 30%;
-            width: 160px;
-            transform: rotate(12deg);
-            animation-delay: 1s;
-        }
-
-        .k3 {
-            left: 38%;
-            top: 8%;
             width: 150px;
-            transform: rotate(-8deg);
-            animation-delay: 2s;
+
+            height: 55px;
+
+            background: #87CEFA;
+
+            border-radius: 50px;
+
+            opacity: 0.35;
+
+            filter: blur(1px);
+
+            animation: cloudMove 18s linear infinite;
         }
 
-        .k4 {
-            right: 20%;
-            top: 25%;
-            width: 170px;
-            transform: rotate(15deg);
+        .cloud::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 75px;
+            height: 75px;
+
+            background: #87CEFA;
+
+            border-radius: 50%;
+
+            left: 25px;
+
+            bottom: 15px;
+        }
+
+        .cloud::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 60px;
+            height: 60px;
+
+            background: #87CEFA;
+
+            border-radius: 50%;
+
+            right: 25px;
+
+            bottom: 12px;
+        }
+
+
+        .cloud1 {
+
+            top: 8%;
+
+            left: -180px;
+
+            animation-duration: 24s;
+        }
+
+        .cloud2 {
+
+            top: 35%;
+
+            left: -200px;
+
+            transform: scale(0.7);
+
+            animation-duration: 30s;
+
+            animation-delay: 5s;
+        }
+
+        .cloud3 {
+
+            top: 65%;
+
+            left: -250px;
+
+            transform: scale(1.2);
+
+            animation-duration: 27s;
+
+            animation-delay: 8s;
+        }
+
+        .cloud4 {
+
+            top: 82%;
+
+            left: -180px;
+
+            transform: scale(0.8);
+
+            animation-duration: 32s;
+
             animation-delay: 3s;
         }
 
-        .k5 {
-            right: 2%;
-            top: 5%;
-            width: 140px;
-            transform: rotate(-12deg);
+
+        @keyframes cloudMove {
+
+            0% {
+
+                left: -250px;
+
+            }
+
+            100% {
+
+                left: 110%;
+
+            }
+
+        }
+
+
+        /* =========================================
+           ANGEL WINGS BACKGROUND
+        ========================================= */
+
+        .wing {
+
+            position: absolute;
+
+            width: 110px;
+
+            height: 55px;
+
+            opacity: 0.55;
+
+            animation: wingFloat 7s ease-in-out infinite;
+
+        }
+
+
+        /* ปีกซ้าย */
+
+        .wing::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 65px;
+
+            height: 35px;
+
+            background: #F0FFFF;
+
+            border: 2px solid #E0FFFF;
+
+            border-radius:
+                100% 0 100% 0;
+
+            transform: rotate(-25deg);
+
+            box-shadow:
+                0 4px 10px rgba(135,206,250,0.25);
+        }
+
+
+        /* ปีกขวา */
+
+        .wing::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 65px;
+
+            height: 35px;
+
+            background: #F0FFFF;
+
+            border: 2px solid #E0FFFF;
+
+            border-radius:
+                0 100% 0 100%;
+
+            left: 45px;
+
+            transform: rotate(25deg);
+
+            box-shadow:
+                0 4px 10px rgba(135,206,250,0.25);
+        }
+
+
+        .wing1 {
+            top: 8%;
+            left: 5%;
+            transform: rotate(-15deg);
+        }
+
+        .wing2 {
+            top: 18%;
+            right: 8%;
+            transform: rotate(20deg);
+            animation-delay: 1s;
+        }
+
+        .wing3 {
+            top: 42%;
+            left: 12%;
+            transform: rotate(10deg);
+            animation-delay: 2s;
+        }
+
+        .wing4 {
+            top: 52%;
+            right: 12%;
+            transform: rotate(-20deg);
+            animation-delay: 3s;
+        }
+
+        .wing5 {
+            bottom: 15%;
+            left: 7%;
+            transform: rotate(15deg);
             animation-delay: 1.5s;
         }
 
-        .k6 {
-            left: 5%;
-            bottom: 5%;
-            width: 160px;
-            transform: rotate(10deg);
+        .wing6 {
+            bottom: 10%;
+            right: 8%;
+            transform: rotate(-15deg);
             animation-delay: 2.5s;
         }
 
-        .k7 {
-            left: 30%;
-            bottom: 0;
-            width: 140px;
+        .wing7 {
+            top: 72%;
+            left: 40%;
+            transform: rotate(5deg);
+            animation-delay: 4s;
+        }
+
+        .wing8 {
+            top: 25%;
+            left: 48%;
             transform: rotate(-10deg);
             animation-delay: 3.5s;
         }
 
-        .k8 {
-            right: 28%;
-            bottom: 3%;
-            width: 160px;
-            transform: rotate(8deg);
-            animation-delay: 4s;
-        }
 
-        .k9 {
-            right: 2%;
-            bottom: 5%;
-            width: 150px;
-            transform: rotate(-15deg);
-            animation-delay: 2s;
-        }
+        @keyframes wingFloat {
 
-        @keyframes float {
+            0%,
+            100% {
 
-            0%, 100% {
-                margin-top: 0;
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
             }
 
             50% {
-                margin-top: -18px;
+
+                transform:
+                    translateY(-25px)
+                    rotate(8deg);
+
             }
+
         }
 
 
-        /* =========================
+        /* =========================================
            PAGE
-        ========================= */
+        ========================================= */
 
         .page {
-            min-height: 100vh;
-            padding: 80px 8% 150px;
+
             display: none;
-            animation: fadeIn 0.6s ease;
+
+            min-height: 100vh;
+
+            padding:
+                80px 7%
+                150px;
+
+            animation:
+                pageAppear
+                0.6s ease;
         }
 
         .page.active {
+
             display: block;
         }
 
-        @keyframes fadeIn {
+
+        @keyframes pageAppear {
 
             from {
+
                 opacity: 0;
-                transform: translateY(20px);
+
+                transform:
+                    translateY(20px);
+
             }
 
             to {
+
                 opacity: 1;
-                transform: translateY(0);
+
+                transform:
+                    translateY(0);
+
             }
+
         }
 
 
-        /* =========================
-           HOME
-        ========================= */
+        /* =========================================
+           MAIN TITLE
+        ========================================= */
 
-        .home {
-            min-height: 100vh;
-            padding-top: 100px;
+        .main-title {
+
             text-align: center;
-        }
 
-        .home-title {
-            font-size: clamp(60px, 10vw, 150px);
+            color: #0000CD;
+
+            font-size:
+                clamp(
+                    65px,
+                    11vw,
+                    160px
+                );
+
             font-weight: 700;
-            color: #FFD700;
+
             letter-spacing: 8px;
-            text-transform: uppercase;
+
+            margin-top: 20px;
+
             text-shadow:
-                0 0 10px rgba(255,215,0,0.3),
-                0 0 30px rgba(255,215,0,0.15);
-        }
-
-        .home-subtitle {
-            margin-top: 15px;
-            font-size: 20px;
-            color: #FFFFFF;
-            opacity: 0.8;
+                0 4px 15px
+                rgba(135,206,250,0.5);
         }
 
 
-        /* =========================
-           PROFILE IMAGE
-        ========================= */
+        .subtitle {
 
-        .profile-image-box {
+            text-align: center;
+
+            color: #0000FF;
+
+            font-size: 22px;
+
+            margin-top: 10px;
+        }
+
+
+        /* =========================================
+           PAGE TITLE
+        ========================================= */
+
+        .page-title {
+
+            text-align: center;
+
+            color: #0000CD;
+
+            font-size:
+                clamp(
+                    45px,
+                    7vw,
+                    90px
+                );
+
+            margin-bottom: 50px;
+
+            font-weight: 700;
+
+            text-shadow:
+                0 3px 10px
+                rgba(135,206,250,0.5);
+        }
+
+
+        /* =========================================
+           IMAGE 3:1
+        ========================================= */
+
+        .profile-image {
+
             width: 33.33%;
-            min-width: 260px;
-            max-width: 550px;
+
+            min-width: 280px;
+
+            max-width: 650px;
+
             aspect-ratio: 3 / 1;
-            margin: 55px auto 40px;
 
-            border: 3px solid #FFD700;
-            border-radius: 10px;
+            margin:
+                55px auto 45px;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            border:
+                4px solid #87CEFA;
 
-            background: rgba(255,255,255,0.06);
-            overflow: hidden;
+            border-radius: 20px;
+
+            background: #F0FFFF;
 
             box-shadow:
-                0 0 20px rgba(255,215,0,0.15);
+                0 10px 30px
+                rgba(135,206,250,0.35);
+
+            overflow: hidden;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
         }
 
-        .profile-image-box img {
+        .profile-image img {
+
             width: 100%;
+
             height: 100%;
+
             object-fit: cover;
         }
 
         .image-placeholder {
-            color: rgba(255,255,255,0.6);
-            font-size: 18px;
-        }
 
-
-        /* =========================
-           HOME INFORMATION
-        ========================= */
-
-        .home-info {
-            width: min(900px, 95%);
-            margin: auto;
-            text-align: left;
-
-            border: 2px solid rgba(255,215,0,0.7);
-            border-radius: 15px;
-
-            padding: 35px 45px;
-
-            background: rgba(0,0,0,0.35);
-            backdrop-filter: blur(8px);
-
-            box-shadow: 0 0 25px rgba(0,0,0,0.3);
-        }
-
-        .home-info p {
-            font-size: clamp(16px, 2vw, 21px);
-            margin: 12px 0;
-            line-height: 1.7;
-        }
-
-        .home-info strong {
-            color: #FFD700;
-        }
-
-
-        /* =========================
-           PAGE TITLE
-        ========================= */
-
-        .page-title {
             text-align: center;
-            color: #FFD700;
-            font-size: clamp(45px, 7vw, 90px);
-            font-weight: 700;
-            margin-bottom: 50px;
-        }
 
+            color: #0000FF;
 
-        /* =========================
-           CONTENT BOX
-        ========================= */
-
-        .content-box {
-            max-width: 1000px;
-            margin: 0 auto 30px;
-
-            padding: 40px 50px;
-
-            border: 2px solid #FFD700;
-            border-radius: 18px;
-
-            background: rgba(0,0,0,0.38);
-            backdrop-filter: blur(10px);
-
-            box-shadow:
-                0 10px 40px rgba(0,0,0,0.25);
-        }
-
-        .content-box h2 {
-            color: #FFD700;
-            font-size: 30px;
-            margin-bottom: 25px;
-        }
-
-        .content-box p {
-            font-size: 18px;
-            line-height: 2;
-            margin-bottom: 10px;
-        }
-
-
-        /* =========================
-           PERSONAL DATA
-        ========================= */
-
-        .data-row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 12px 0;
-            font-size: 18px;
-        }
-
-        .data-label {
-            color: #FFD700;
-            min-width: 220px;
-            font-weight: 500;
-        }
-
-        .data-value {
-            flex: 1;
-        }
-
-
-        /* =========================
-           CERTIFICATES
-        ========================= */
-
-        .certificate {
-            max-width: 1000px;
-            margin: 0 auto 45px;
-
-            padding: 30px;
-
-            border: 2px solid rgba(255,215,0,0.7);
-            border-radius: 18px;
-
-            background: rgba(0,0,0,0.38);
-            backdrop-filter: blur(8px);
-        }
-
-        .certificate-image {
-            width: 100%;
-            max-width: 700px;
-            aspect-ratio: 3 / 2;
-
-            margin: 0 auto 25px;
-
-            border: 2px dashed #FFD700;
-            border-radius: 12px;
-
-            overflow: hidden;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: rgba(255,255,255,0.05);
-        }
-
-        .certificate-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .certificate-placeholder {
-            color: rgba(255,255,255,0.55);
-            font-size: 17px;
-            text-align: center;
             padding: 20px;
         }
 
-        .certificate h3 {
-            color: #FFD700;
-            font-size: 23px;
-            margin-bottom: 15px;
-        }
 
-        .certificate p {
-            font-size: 17px;
-            line-height: 1.9;
-            margin-bottom: 8px;
-        }
+        /* =========================================
+           CONTENT BOX
+        ========================================= */
 
-        .lesson {
-            margin-top: 15px;
-            padding: 15px 20px;
+        .content-box {
 
-            border-left: 4px solid #FFD700;
+            width: min(1000px, 95%);
 
-            background: rgba(255,215,0,0.07);
-        }
+            margin:
+                0 auto 35px;
 
-        .lesson strong {
-            color: #FFD700;
-        }
+            padding:
+                40px 50px;
 
+            background:
+                rgba(255,255,255,0.88);
 
-        /* =========================
-           CONTACT
-        ========================= */
+            border:
+                3px solid #87CEFA;
 
-        .contact-container {
-            max-width: 850px;
-            margin: auto;
-
-            display: grid;
-            gap: 25px;
-        }
-
-        .contact-card {
-            border: 2px solid #FFD700;
-            border-radius: 18px;
-
-            padding: 30px;
-
-            background: rgba(0,0,0,0.4);
-
-            text-align: center;
-
-            transition: 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 10px 30px rgba(255,215,0,0.15);
-        }
-
-        .contact-card h2 {
-            color: #FFD700;
-            margin-bottom: 10px;
-        }
-
-        .contact-card p {
-            font-size: 20px;
-        }
-
-
-        /* =========================
-           BOTTOM NAVIGATION
-        ========================= */
-
-        .bottom-nav {
-            position: fixed;
-
-            left: 50%;
-            bottom: 20px;
-
-            transform: translateX(-50%);
-
-            z-index: 1000;
-
-            display: flex;
-            gap: 8px;
-
-            padding: 10px;
-
-            background: rgba(10,5,15,0.92);
-
-            border: 2px solid #FFD700;
-            border-radius: 15px;
-
-            backdrop-filter: blur(12px);
+            border-radius: 25px;
 
             box-shadow:
-                0 8px 30px rgba(0,0,0,0.5);
+                0 10px 35px
+                rgba(135,206,250,0.35);
         }
 
-        .nav-button {
-            border: 2px solid #FFD700;
 
-            background: transparent;
+        .content-box h2 {
 
-            color: #FFFFFF;
+            color: #0000CD;
 
-            padding: 12px 20px;
+            font-size: 32px;
 
-            font-family: "Kanit", sans-serif;
+            margin-bottom: 25px;
 
-            font-size: 15px;
+            border-bottom:
+                2px solid #CCFFFF;
 
-            cursor: pointer;
-
-            border-radius: 7px;
-
-            transition: 0.3s;
-
-            white-space: nowrap;
+            padding-bottom: 10px;
         }
 
-        .nav-button:hover,
-        .nav-button.active {
-            background: #FFD700;
-            color: #120b18;
+
+        .content-box p {
+
+            color: #0000FF;
+
+            font-size: 19px;
+
+            line-height: 2;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* =========================================
+           HOME INFORMATION
+        ========================================= */
+
+        .home-info {
+
+            width: min(950px, 95%);
+
+            margin: auto;
+
+            padding:
+                35px 45px;
+
+            background:
+                rgba(255,255,255,0.92);
+
+            border:
+                3px solid #87CEFA;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 10px 35px
+                rgba(135,206,250,0.3);
+
+            text-align: left;
+        }
+
+
+        .home-info p {
+
+            color: #0000FF;
+
+            font-size:
+                clamp(
+                    16px,
+                    2vw,
+                    21px
+                );
+
+            line-height: 1.8;
+
+            margin: 12px 0;
+        }
+
+
+        .home-info strong {
+
+            color: #0000CD;
+
+            margin-right: 8px;
+        }
+
+
+        /* =========================================
+           PERSONAL DATA
+        ========================================= */
+
+        .data-row {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            padding: 10px 0;
+
+            border-bottom:
+                1px solid #CCFFFF;
+
+            font-size: 19px;
+
+            line-height: 1.8;
+        }
+
+
+        .data-label {
+
+            color: #0000CD;
+
+            min-width: 230px;
+
             font-weight: 600;
         }
 
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
+        .data-value {
 
-        @media (max-width: 900px) {
+            color: #0000FF;
+
+            flex: 1;
+        }
+
+
+        /* =========================================
+           CERTIFICATE
+        ========================================= */
+
+        .certificate {
+
+            width: min(1050px, 95%);
+
+            margin:
+                0 auto 50px;
+
+            padding: 35px;
+
+            background:
+                rgba(255,255,255,0.93);
+
+            border:
+                3px solid #87CEFA;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 10px 35px
+                rgba(135,206,250,0.3);
+        }
+
+
+        .certificate-image {
+
+            width: 100%;
+
+            max-width: 800px;
+
+            aspect-ratio: 3 / 2;
+
+            margin:
+                0 auto 30px;
+
+            border:
+                3px dashed #87CEFA;
+
+            border-radius: 18px;
+
+            background: #F0FFFF;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+
+        .certificate-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+        }
+
+
+        .certificate-placeholder {
+
+            text-align: center;
+
+            color: #0000FF;
+
+            padding: 20px;
+        }
+
+
+        .certificate h3 {
+
+            color: #0000CD;
+
+            font-size: 27px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .certificate p {
+
+            color: #0000FF;
+
+            font-size: 18px;
+
+            line-height: 1.9;
+
+            margin-bottom: 10px;
+        }
+
+
+        .lesson {
+
+            margin-top: 20px;
+
+            padding:
+                18px 22px;
+
+            border-left:
+                6px solid #87CEFA;
+
+            background:
+                #F0FFFF;
+
+            border-radius:
+                0 15px 15px 0;
+
+            color: #0000FF;
+
+            line-height: 1.8;
+        }
+
+
+        .lesson strong {
+
+            color: #0000CD;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+
+        .contact-container {
+
+            width: min(850px, 95%);
+
+            margin: auto;
+
+            display: grid;
+
+            gap: 25px;
+        }
+
+
+        .contact-card {
+
+            padding: 30px;
+
+            background:
+                rgba(255,255,255,0.95);
+
+            border:
+                3px solid #87CEFA;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            transition:
+                0.3s ease;
+
+            box-shadow:
+                0 10px 30px
+                rgba(135,206,250,0.3);
+        }
+
+
+        .contact-card:hover {
+
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                0 15px 40px
+                rgba(135,206,250,0.5);
+        }
+
+
+        .contact-card h2 {
+
+            color: #0000CD;
+
+            font-size: 27px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .contact-card p {
+
+            color: #0000FF;
+
+            font-size: 21px;
+        }
+
+
+        /* =========================================
+           ANGEL WING NAVIGATION
+        ========================================= */
+
+        .bottom-nav {
+
+            position: fixed;
+
+            left: 50%;
+
+            bottom: 18px;
+
+            transform:
+                translateX(-50%);
+
+            z-index: 1000;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 12px;
+
+            background:
+                rgba(255,255,255,0.95);
+
+            border:
+                3px solid #87CEFA;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 10px 35px
+                rgba(135,206,250,0.45);
+
+            backdrop-filter:
+                blur(10px);
+        }
+
+
+        /* แต่ละปุ่ม */
+
+        .nav-button {
+
+            position: relative;
+
+            min-width: 135px;
+
+            padding:
+                13px 18px;
+
+            border:
+                2px solid #87CEFA;
+
+            border-radius: 12px;
+
+            background:
+                #FFFFFF;
+
+            color: #0000CD;
+
+            font-family:
+                "Kanit",
+                sans-serif;
+
+            font-size: 15px;
+
+            font-weight: 500;
+
+            cursor: pointer;
+
+            transition:
+                0.3s ease;
+
+            overflow: visible;
+        }
+
+
+        /* ปีกด้านซ้ายของปุ่ม */
+
+        .nav-button::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 25px;
+
+            height: 15px;
+
+            left: -21px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%)
+                rotate(-20deg);
+
+            background: #F0FFFF;
+
+            border:
+                2px solid #87CEFA;
+
+            border-radius:
+                100% 0 100% 0;
+        }
+
+
+        /* ปีกด้านขวาของปุ่ม */
+
+        .nav-button::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 25px;
+
+            height: 15px;
+
+            right: -21px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%)
+                rotate(20deg);
+
+            background: #F0FFFF;
+
+            border:
+                2px solid #87CEFA;
+
+            border-radius:
+                0 100% 0 100%;
+        }
+
+
+        .nav-button:hover,
+        .nav-button.active {
+
+            background: #87CEFA;
+
+            color: #0000CD;
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 7px 20px
+                rgba(135,206,250,0.5);
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 1100px) {
 
             .bottom-nav {
+
                 width: 95%;
+
                 overflow-x: auto;
+
                 justify-content: flex-start;
             }
 
             .nav-button {
-                padding: 10px 14px;
+
+                min-width: 120px;
+
                 font-size: 13px;
+
+                padding:
+                    10px 12px;
             }
 
-            .page {
-                padding: 60px 5% 150px;
-            }
-
-            .home-info {
-                padding: 25px;
-            }
-
-            .content-box {
-                padding: 25px;
-            }
-
-            .profile-image-box {
-                width: 70%;
-            }
-
-            .kuromi {
-                width: 90px;
-            }
         }
 
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
 
-            .home-title {
+            .page {
+
+                padding:
+                    60px 4%
+                    150px;
+            }
+
+
+            .main-title {
+
                 font-size: 55px;
+
                 letter-spacing: 3px;
             }
 
+
             .page-title {
+
                 font-size: 45px;
             }
 
-            .profile-image-box {
+
+            .profile-image {
+
                 width: 90%;
+
+                min-width: 0;
             }
+
+
+            .home-info,
+            .content-box {
+
+                padding:
+                    25px;
+            }
+
 
             .data-row {
+
                 display: block;
             }
 
+
             .data-label {
+
+                min-width: 0;
+
                 display: block;
+
                 margin-bottom: 3px;
             }
 
+
             .certificate {
+
                 padding: 20px;
             }
 
+
+            .certificate h3 {
+
+                font-size: 22px;
+            }
+
+
             .certificate p {
+
                 font-size: 16px;
             }
 
-            .bottom-nav {
-                bottom: 10px;
-            }
 
             .nav-button {
-                padding: 9px 11px;
+
+                min-width: 105px;
+
+                font-size: 12px;
+
+                padding:
+                    9px 8px;
             }
+
+
+            .nav-button::before,
+            .nav-button::after {
+
+                display: none;
+            }
+
+
+            .wing {
+
+                transform:
+                    scale(0.7);
+            }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =========================
+    <!-- =========================================
          BACKGROUND
-    ========================= -->
+    ========================================= -->
 
     <div class="background">
 
-        <!-- เปลี่ยนรูปเป็นรูป Kuromi ของคุณเอง -->
-        <img src="images/kuromi1.png" class="kuromi k1" alt="">
-        <img src="images/kuromi2.png" class="kuromi k2" alt="">
-        <img src="images/kuromi3.png" class="kuromi k3" alt="">
-        <img src="images/kuromi4.png" class="kuromi k4" alt="">
-        <img src="images/kuromi5.png" class="kuromi k5" alt="">
-        <img src="images/kuromi1.png" class="kuromi k6" alt="">
-        <img src="images/kuromi2.png" class="kuromi k7" alt="">
-        <img src="images/kuromi3.png" class="kuromi k8" alt="">
-        <img src="images/kuromi4.png" class="kuromi k9" alt="">
+
+        <!-- เมฆ -->
+
+        <div class="cloud cloud1"></div>
+
+        <div class="cloud cloud2"></div>
+
+        <div class="cloud cloud3"></div>
+
+        <div class="cloud cloud4"></div>
+
+
+        <!-- ปีกนางฟ้า -->
+
+        <div class="wing wing1"></div>
+
+        <div class="wing wing2"></div>
+
+        <div class="wing wing3"></div>
+
+        <div class="wing wing4"></div>
+
+        <div class="wing wing5"></div>
+
+        <div class="wing wing6"></div>
+
+        <div class="wing wing7"></div>
+
+        <div class="wing wing8"></div>
 
     </div>
 
 
-    <!-- =========================
+
+    <!-- =========================================
          HOME
-    ========================= -->
+    ========================================= -->
 
-    <section id="home" class="page active home">
+    <section
+        id="home"
+        class="page active">
 
-        <h1 class="home-title">
+
+        <h1 class="main-title">
             PORTFOLIO
         </h1>
 
-        <p class="home-subtitle">
+
+        <p class="subtitle">
             Bunyanuch Keanna
         </p>
 
 
-        <!-- ช่องใส่รูปภาพ -->
-        <div class="profile-image-box">
+        <!-- รูปภาพอัตราส่วน 3:1 -->
 
-            <!-- เปลี่ยน profile.jpg เป็นชื่อรูปของคุณ -->
-            <img src="images/profile.jpg"
-                 alt="รูปภาพ Portfolio"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="profile-image">
 
-            <div class="image-placeholder" style="display:none;">
+            <img
+                src="images/profile.jpg"
+                alt="รูปภาพ Portfolio"
+                onerror="
+                    this.style.display='none';
+                    this.nextElementSibling.style.display='block';
+                "
+            >
+
+            <div
+                class="image-placeholder"
+                style="display:none;">
+
                 ใส่รูปภาพของคุณที่นี่<br>
                 images/profile.jpg
+
             </div>
 
         </div>
 
 
-        <!-- ข้อมูล -->
+
+        <!-- ข้อมูลหน้าแรก -->
+
         <div class="home-info">
+
 
             <p>
                 <strong>ชื่อ-นามสกุล</strong>
                 นางสาวบุณยานุช เขียนนา
             </p>
 
+
             <p>
                 <strong>Name</strong>
                 Bunyanuch Keanna
             </p>
+
 
             <p>
                 <strong>Nickname</strong>
                 Cake
             </p>
 
+
             <p>
                 <strong>ระดับชั้น</strong>
                 มัธยมศึกษาชั้นปีที่ 6/3
             </p>
+
 
             <p>
                 <strong>แผนการเรียน</strong>
                 วิทยาศาสตร์-คณิตศาสตร์ (MSEP)
             </p>
 
+
             <p>
                 <strong>โรงเรียนที่กำลังศึกษาอยู่</strong>
                 โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"
             </p>
 
+
             <p>
-                <strong>คณะ-สาขาและมหาวิทยาลัยที่สนใจศึกษาต่อ</strong>
-                คณะพยาบาลศาสตร์ สาขาพยาบาลศาสตร์ มหาวิทยาลัยมหิดล
+                <strong>
+                    คณะ-สาขาและมหาวิทยาลัยที่สนใจศึกษาต่อ
+                </strong>
+
+                คณะพยาบาลศาสตร์
+                สาขาพยาบาลศาสตร์
+                มหาวิทยาลัยมหิดล
             </p>
+
 
         </div>
 
@@ -705,25 +1312,43 @@
 
 
 
-    <!-- =========================
+    <!-- =========================================
          PREFACE
-    ========================= -->
+    ========================================= -->
 
-    <section id="preface" class="page">
+    <section
+        id="preface"
+        class="page">
+
 
         <h1 class="page-title">
             คำนำ
         </h1>
 
+
         <div class="content-box">
 
-            <p>
-                แฟ้มสะสมผลงาน (Portfolio) เล่มนี้ จัดทำขึ้นเพื่อเป็นตัวแทนในการนำเสนอข้อมูลเกี่ยวกับประวัติส่วนตัว ความรู้ ความสามารถ ทักษะ และกิจกรรมต่างๆ ของข้าพเจ้า โดยเฉพาะความสนใจและความมุ่งมั่นที่มีต่อการศึกษาต่อ
-            </p>
 
             <p>
-                ภายในแฟ้มสะสมผลงานเล่มนี้ ประกอบด้วยประวัติส่วนตัว ผลการเรียน กิจกรรมที่ข้าพเจ้าได้เข้าร่วม
+
+                แฟ้มสะสมผลงาน (Portfolio) เล่มนี้
+                จัดทำขึ้นเพื่อเป็นตัวแทนในการนำเสนอข้อมูลเกี่ยวกับ
+                ประวัติส่วนตัว ความรู้ ความสามารถ ทักษะ
+                และกิจกรรมต่างๆ ของข้าพเจ้า
+                โดยเฉพาะความสนใจและความมุ่งมั่น
+                ที่มีต่อการศึกษาต่อ
+
             </p>
+
+
+            <p>
+
+                ภายในแฟ้มสะสมผลงานเล่มนี้
+                ประกอบด้วยประวัติส่วนตัว ผลการเรียน
+                กิจกรรมที่ข้าพเจ้าได้เข้าร่วม
+
+            </p>
+
 
         </div>
 
@@ -731,11 +1356,14 @@
 
 
 
-    <!-- =========================
-         PERSONAL HISTORY
-    ========================= -->
+    <!-- =========================================
+         PROFILE
+    ========================================= -->
 
-    <section id="profile" class="page">
+    <section
+        id="profile"
+        class="page">
+
 
         <h1 class="page-title">
             ประวัติส่วนตัว
@@ -744,78 +1372,180 @@
 
         <div class="content-box">
 
+
             <h2>
                 ประวัติส่วนตัว
             </h2>
 
-            <div class="data-row">
-                <div class="data-label">ชื่อ-นามสกุล</div>
-                <div class="data-value">นางสาวบุณยานุช เขียนนา</div>
-            </div>
 
             <div class="data-row">
-                <div class="data-label">Name</div>
-                <div class="data-value">Bunyanuch Keanna</div>
+
+                <div class="data-label">
+                    ชื่อ-นามสกุล
+                </div>
+
+                <div class="data-value">
+                    นางสาวบุณยานุช เขียนนา
+                </div>
+
             </div>
 
-            <div class="data-row">
-                <div class="data-label">ชื่อเล่น</div>
-                <div class="data-value">เค้ก</div>
-            </div>
 
             <div class="data-row">
-                <div class="data-label">Nickname</div>
-                <div class="data-value">Cake</div>
+
+                <div class="data-label">
+                    Name
+                </div>
+
+                <div class="data-value">
+                    Bunyanuch Keanna
+                </div>
+
             </div>
 
-            <div class="data-row">
-                <div class="data-label">อายุ</div>
-                <div class="data-value">17 ปี</div>
-            </div>
 
             <div class="data-row">
-                <div class="data-label">Age</div>
-                <div class="data-value">17 years old</div>
+
+                <div class="data-label">
+                    ชื่อเล่น
+                </div>
+
+                <div class="data-value">
+                    เค้ก
+                </div>
+
             </div>
 
-            <div class="data-row">
-                <div class="data-label">วันเกิด</div>
-                <div class="data-value">13/03/08</div>
-            </div>
 
             <div class="data-row">
-                <div class="data-label">สัญชาติ</div>
-                <div class="data-value">ไทย</div>
+
+                <div class="data-label">
+                    Nickname
+                </div>
+
+                <div class="data-value">
+                    Cake
+                </div>
+
             </div>
 
-            <div class="data-row">
-                <div class="data-label">เชื้อชาติ</div>
-                <div class="data-value">ไทย</div>
-            </div>
 
             <div class="data-row">
-                <div class="data-label">ศาสนา</div>
-                <div class="data-value">พุทธ</div>
+
+                <div class="data-label">
+                    อายุ
+                </div>
+
+                <div class="data-value">
+                    17 ปี
+                </div>
+
             </div>
 
+
             <div class="data-row">
-                <div class="data-label">ประวัติการศึกษา</div>
+
+                <div class="data-label">
+                    Age
+                </div>
+
+                <div class="data-value">
+                    17 years old
+                </div>
+
+            </div>
+
+
+            <div class="data-row">
+
+                <div class="data-label">
+                    วันเกิด
+                </div>
+
+                <div class="data-value">
+                    13/03/08
+                </div>
+
+            </div>
+
+
+            <div class="data-row">
+
+                <div class="data-label">
+                    สัญชาติ
+                </div>
+
+                <div class="data-value">
+                    ไทย
+                </div>
+
+            </div>
+
+
+            <div class="data-row">
+
+                <div class="data-label">
+                    เชื้อชาติ
+                </div>
+
+                <div class="data-value">
+                    ไทย
+                </div>
+
+            </div>
+
+
+            <div class="data-row">
+
+                <div class="data-label">
+                    ศาสนา
+                </div>
+
+                <div class="data-value">
+                    พุทธ
+                </div>
+
+            </div>
+
+
+            <div class="data-row">
+
+                <div class="data-label">
+                    ประวัติการศึกษา
+                </div>
+
                 <div class="data-value">
                     โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"
                 </div>
+
             </div>
 
+
             <div class="data-row">
-                <div class="data-label">แผนการเรียน</div>
+
+                <div class="data-label">
+                    แผนการเรียน
+                </div>
+
                 <div class="data-value">
                     วิทยาศาสตร์-คณิตศาสตร์ (MSEP)
                 </div>
+
             </div>
 
+
             <div class="data-row">
-                <div class="data-label">GPAX</div>
-                <div class="data-value">3.62</div>
+
+                <div class="data-label">
+                    GPAX
+                </div>
+
+                <div class="data-value">
+                    3.62
+                </div>
+
             </div>
+
 
         </div>
 
@@ -823,320 +1553,578 @@
 
 
 
-    <!-- =========================
+    <!-- =========================================
          ACTIVITIES
-    ========================= -->
+    ========================================= -->
 
-    <section id="activities" class="page">
+    <section
+        id="activities"
+        class="page">
+
 
         <h1 class="page-title">
             ผลงานและกิจกรรม
         </h1>
 
 
-        <!-- ผลงานที่ 1 -->
+
+        <!-- ==============================
+             CERTIFICATE 1
+        ============================== -->
 
         <div class="certificate">
 
+
             <div class="certificate-image">
 
-                <img src="images/certificate1.jpg"
-                     alt="เกียรติบัตรที่ 1"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img
+                    src="images/certificate1.jpg"
+                    alt="เกียรติบัตรที่ 1"
+                    onerror="
+                        this.style.display='none';
+                        this.nextElementSibling.style.display='block';
+                    "
+                >
 
-                <div class="certificate-placeholder" style="display:none;">
+                <div
+                    class="certificate-placeholder"
+                    style="display:none;">
+
                     ใส่รูปเกียรติบัตรที่ 1<br>
                     images/certificate1.jpg
+
                 </div>
 
             </div>
 
-            <h3>เกียรติบัตร MU X MOOC</h3>
+
+            <h3>
+                MU X MOOC
+            </h3>
+
 
             <p>
-                ได้รับเกียรติบัตรจากการเรียนล่วงหน้าของ MU X MOOC
-                เรื่องเพศวิถีและการให้คำปรึกษาทางเพศสำหรับวัยรุ่น
+
+                ได้รับเกียรติบัตรจากการเรียนล่วงหน้าของ
+                MU X MOOC เรื่องเพศวิถีและการให้คำปรึกษา
+                ทางเพศสำหรับวัยรุ่น
+
             </p>
+
 
             <p>
                 ได้รับเมื่อวันที่ 11 สิงหาคม 2569
             </p>
 
+
             <div class="lesson">
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้</strong><br>
-                การดูแลและป้องกันตัวเองจากสถานการณ์ต่าง ๆ จากการมีเพศสัมพันธ์ในวัยรุ่น
+
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้
+                </strong>
+
+                <br>
+
+                การดูแลและป้องกันตัวเองจากสถานการณ์ต่าง ๆ
+                จากการมีเพศสัมพันธ์ในวัยรุ่น
+
             </div>
+
 
         </div>
 
 
 
-        <!-- ผลงานที่ 2 -->
+        <!-- ==============================
+             CERTIFICATE 2
+        ============================== -->
 
         <div class="certificate">
 
+
             <div class="certificate-image">
 
-                <img src="images/certificate2.jpg"
-                     alt="เกียรติบัตรที่ 2"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img
+                    src="images/certificate2.jpg"
+                    alt="เกียรติบัตรที่ 2"
+                    onerror="
+                        this.style.display='none';
+                        this.nextElementSibling.style.display='block';
+                    "
+                >
 
-                <div class="certificate-placeholder" style="display:none;">
+                <div
+                    class="certificate-placeholder"
+                    style="display:none;">
+
                     ใส่รูปเกียรติบัตรที่ 2<br>
                     images/certificate2.jpg
+
                 </div>
 
             </div>
 
-            <h3>หลักสูตรการดูแลผู้ป่วยเบื้องต้นที่บ้าน</h3>
+
+            <h3>
+                การดูแลผู้ป่วยเบื้องต้นที่บ้าน
+            </h3>
+
 
             <p>
+
                 ได้รับเกียรติบัตรจากสภากาชาดไทย
-                หลักสูตรการดูแลผู้ป่วยเบื้องต้นที่บ้าน (Online)
+                หลักสูตรการดูแลผู้ป่วยเบื้องต้นที่บ้าน
+                (Online)
+
             </p>
+
 
             <p>
                 ได้รับเมื่อวันที่ 3 สิงหาคม 2569
             </p>
 
+
             <div class="lesson">
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้</strong><br>
-                การดูแลผู้ป่วยติดเตียงด้วยตนเองที่บ้านให้สะอาดและปลอดภัย
+
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้
+                </strong>
+
+                <br>
+
+                การดูแลผู้ป่วยติดเตียงด้วยตนเองที่บ้าน
+                ให้สะอาดและปลอดภัย
+
             </div>
+
 
         </div>
 
 
 
-        <!-- ผลงานที่ 3 -->
+        <!-- ==============================
+             CERTIFICATE 3
+        ============================== -->
 
         <div class="certificate">
 
+
             <div class="certificate-image">
 
-                <img src="images/certificate3.jpg"
-                     alt="เกียรติบัตรที่ 3"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img
+                    src="images/certificate3.jpg"
+                    alt="เกียรติบัตรที่ 3"
+                    onerror="
+                        this.style.display='none';
+                        this.nextElementSibling.style.display='block';
+                    "
+                >
 
-                <div class="certificate-placeholder" style="display:none;">
+                <div
+                    class="certificate-placeholder"
+                    style="display:none;">
+
                     ใส่รูปเกียรติบัตรที่ 3<br>
                     images/certificate3.jpg
+
                 </div>
 
             </div>
 
-            <h3>Stroke โรคหลอดเลือดสมอง ภัยเงียบใกล้ตัว</h3>
+
+            <h3>
+                Stroke โรคหลอดเลือดสมอง ภัยเงียบใกล้ตัว
+            </h3>
+
 
             <p>
+
                 ได้รับเกียรติบัตรจากสภากาชาดไทย
-                ได้เข้าร่วมอบรมความรู้เรื่อง Stroke โรคหลอดเลือดสมอง ภัยเงียบ ใกล้ตัว (ออนไลน์)
+                ได้เข้าร่วมอบรมความรู้เรื่อง Stroke
+                โรคหลอดเลือดสมอง ภัยเงียบ ใกล้ตัว
+                (ออนไลน์)
+
             </p>
+
 
             <p>
                 ได้รับเมื่อวันที่ 9 สิงหาคม 2569
             </p>
 
+
             <div class="lesson">
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้</strong><br>
-                การสังเกตตนเองและคนรอบข้างเพื่อเฝ้าระวังจากโรค Stroke
+
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้
+                </strong>
+
+                <br>
+
+                การสังเกตตนเองและคนรอบข้าง
+                เพื่อเฝ้าระวังจากโรค Stroke
+
             </div>
+
 
         </div>
 
 
 
-        <!-- ผลงานที่ 4 -->
+        <!-- ==============================
+             CERTIFICATE 4
+        ============================== -->
 
         <div class="certificate">
 
+
             <div class="certificate-image">
 
-                <img src="images/certificate4.jpg"
-                     alt="เกียรติบัตรที่ 4"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img
+                    src="images/certificate4.jpg"
+                    alt="เกียรติบัตรที่ 4"
+                    onerror="
+                        this.style.display='none';
+                        this.nextElementSibling.style.display='block';
+                    "
+                >
 
-                <div class="certificate-placeholder" style="display:none;">
+                <div
+                    class="certificate-placeholder"
+                    style="display:none;">
+
                     ใส่รูปเกียรติบัตรที่ 4<br>
                     images/certificate4.jpg
+
                 </div>
 
             </div>
 
-            <h3>การดูแลสิ่งแวดล้อมและอุบัติเหตุที่พบบ่อยในผู้สูงอายุ</h3>
+
+            <h3>
+                การดูแลสิ่งแวดล้อมและอุบัติเหตุ
+                ที่พบบ่อยในผู้สูงอายุ
+            </h3>
+
 
             <p>
+
                 ได้รับเกียรติบัตรจากสภากาชาดไทย
-                ได้เข้าร่วมอบรมความรู้เรื่อง การดูแลสิ่งแวดล้อมและอุบัติเหตุที่พบบ่อยในผู้สูงอายุ
+                ได้เข้าร่วมอบรมความรู้เรื่อง
+                การดูแลสิ่งแวดล้อมและอุบัติเหตุ
+                ที่พบบ่อยในผู้สูงอายุ
+
             </p>
+
 
             <p>
                 ได้รับเมื่อวันที่ 9 สิงหาคม 2569
             </p>
 
+
             <div class="lesson">
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้</strong><br>
-                การสังเกตรอบบ้านและเฝ้าระวังไม่ให้คนสูงอายุในบ้านได้รับบาดเจ็บจากสิ่งที่อาจมองข้ามใกล้ตัว
+
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้
+                </strong>
+
+                <br>
+
+                การสังเกตรอบบ้านและเฝ้าระวัง
+                ไม่ให้คนสูงอายุในบ้านได้รับบาดเจ็บ
+                จากสิ่งที่อาจมองข้ามใกล้ตัว
+
             </div>
+
 
         </div>
 
 
 
-        <!-- ผลงานที่ 5 -->
+        <!-- ==============================
+             CERTIFICATE 5
+        ============================== -->
 
         <div class="certificate">
 
+
             <div class="certificate-image">
 
-                <img src="images/certificate5.jpg"
-                     alt="เกียรติบัตรที่ 5"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img
+                    src="images/certificate5.jpg"
+                    alt="เกียรติบัตรที่ 5"
+                    onerror="
+                        this.style.display='none';
+                        this.nextElementSibling.style.display='block';
+                    "
+                >
 
-                <div class="certificate-placeholder" style="display:none;">
+                <div
+                    class="certificate-placeholder"
+                    style="display:none;">
+
                     ใส่รูปเกียรติบัตรที่ 5<br>
                     images/certificate5.jpg
+
                 </div>
 
             </div>
 
-            <h3>หลักสูตรการบริจาคอวัยวะและเนื้อเยื่อ</h3>
+
+            <h3>
+                การบริจาคอวัยวะและเนื้อเยื่อ
+            </h3>
+
 
             <p>
+
                 ได้รับเกียรติบัตรจากสภากาชาดไทย
                 หลักสูตรการบริจาคอวัยวะและเนื้อเยื่อ
+
             </p>
+
 
             <p>
                 ได้รับเมื่อวันที่ 9 สิงหาคม 2569
             </p>
 
+
             <div class="lesson">
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้</strong><br>
-                การบริจาคอวัยวะและเนื้อเยื่อให้ถูกวิธีเพื่อให้มีประสิทธิภาพมากที่สุด
+
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้
+                </strong>
+
+                <br>
+
+                การบริจาคอวัยวะและเนื้อเยื่อให้ถูกวิธี
+                เพื่อให้มีประสิทธิภาพมากที่สุด
+
             </div>
+
 
         </div>
 
 
 
-        <!-- ผลงานที่ 6 -->
+        <!-- ==============================
+             CERTIFICATE 6
+        ============================== -->
 
         <div class="certificate">
 
+
             <div class="certificate-image">
 
-                <img src="images/certificate6.jpg"
-                     alt="เกียรติบัตรที่ 6"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img
+                    src="images/certificate6.jpg"
+                    alt="เกียรติบัตรที่ 6"
+                    onerror="
+                        this.style.display='none';
+                        this.nextElementSibling.style.display='block';
+                    "
+                >
 
-                <div class="certificate-placeholder" style="display:none;">
+                <div
+                    class="certificate-placeholder"
+                    style="display:none;">
+
                     ใส่รูปเกียรติบัตรที่ 6<br>
                     images/certificate6.jpg
+
                 </div>
 
             </div>
 
-            <h3>Heat Stroke โรคลมแดด คร่าชีวิต</h3>
+
+            <h3>
+                Heat Stroke โรคลมแดด คร่าชีวิต
+            </h3>
+
 
             <p>
+
                 ได้รับเกียรติบัตรจากสภากาชาดไทย
-                ได้เข้าร่วมอบรมความรู้เรื่อง Heat Stroke โรคลมแดด คร่าชีวิต (ออนไลน์)
+                ได้เข้าร่วมอบรมความรู้เรื่อง
+                Heat Stroke โรคลมแดด คร่าชีวิต
+                (ออนไลน์)
+
             </p>
+
 
             <p>
                 ได้รับเมื่อวันที่ 9 สิงหาคม 2569
             </p>
 
+
             <div class="lesson">
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้</strong><br>
-                การระวังตัวเองจากโรค Heat Stroke โรคลมแดด
+
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้
+                </strong>
+
+                <br>
+
+                การระวังตัวเองจากโรค Heat Stroke
+                โรคลมแดด
+
             </div>
+
 
         </div>
 
 
 
-        <!-- ผลงานที่ 7 -->
+        <!-- ==============================
+             CERTIFICATE 7
+        ============================== -->
 
         <div class="certificate">
 
+
             <div class="certificate-image">
 
-                <img src="images/certificate7.jpg"
-                     alt="เกียรติบัตรที่ 7"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img
+                    src="images/certificate7.jpg"
+                    alt="เกียรติบัตรที่ 7"
+                    onerror="
+                        this.style.display='none';
+                        this.nextElementSibling.style.display='block';
+                    "
+                >
 
-                <div class="certificate-placeholder" style="display:none;">
+                <div
+                    class="certificate-placeholder"
+                    style="display:none;">
+
                     ใส่รูปเกียรติบัตรที่ 7<br>
                     images/certificate7.jpg
+
                 </div>
 
             </div>
 
-            <h3>การเลี้ยงลูกด้วยนมแม่</h3>
+
+            <h3>
+                การเลี้ยงลูกด้วยนมแม่
+                (Breastfeeding)
+            </h3>
+
 
             <p>
-                ได้รับเกียรติบัตรจากการเรียนล่วงหน้าของ MU X MOOC
-                เรื่องการเลี้ยงลูกด้วยนมแม่ (Breastfeeding)
+
+                ได้รับเกียรติบัตรจากการเรียนล่วงหน้าของ
+                MU X MOOC เรื่องการเลี้ยงลูกด้วยนมแม่
+                (Breastfeeding)
+
             </p>
+
 
             <p>
                 ได้รับเมื่อวันที่ 12 สิงหาคม 2569
             </p>
 
+
             <div class="lesson">
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้</strong><br>
-                ประโยชน์จากการให้นมแม่และข้อดีข้อเสียต่าง ๆ
+
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้
+                </strong>
+
+                <br>
+
+                ประโยชน์จากการให้นมแม่
+                และข้อดีข้อเสียต่าง ๆ
+
             </div>
+
 
         </div>
 
 
 
-        <!-- ผลงานที่ 8 -->
+        <!-- ==============================
+             CERTIFICATE 8
+        ============================== -->
 
         <div class="certificate">
 
+
             <div class="certificate-image">
 
-                <img src="images/certificate8.jpg"
-                     alt="เกียรติบัตรที่ 8"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img
+                    src="images/certificate8.jpg"
+                    alt="เกียรติบัตรที่ 8"
+                    onerror="
+                        this.style.display='none';
+                        this.nextElementSibling.style.display='block';
+                    "
+                >
 
-                <div class="certificate-placeholder" style="display:none;">
+                <div
+                    class="certificate-placeholder"
+                    style="display:none;">
+
                     ใส่รูปเกียรติบัตรที่ 8<br>
                     images/certificate8.jpg
+
                 </div>
 
             </div>
 
-            <h3>คณะกรรมการจัดกิจกรรมอบรมแกนนำจิตอาสาป้องกันเอดส์</h3>
+
+            <h3>
+                คณะกรรมการจัดกิจกรรมอบรมแกนนำ
+                จิตอาสาป้องกันเอดส์
+            </h3>
+
 
             <p>
-                ได้รับเกียรติบัตรจากการเป็นคณะกรรมการจัดกิจกรรมอบรมแกนนำจิตอาสาป้องกันเอดส์เทิดพระเกียรติพระเจ้าวรวงศ์เธอ พระองค์เจ้าโสมสวลี กรมหมื่นสุทธนารีนาถ
-                ณ โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"
+
+                ได้รับเกียรติบัตรจากการเป็นคณะกรรมการ
+                จัดกิจกรรมอบรมแกนนำจิตอาสาป้องกันเอดส์
+                เทิดพระเกียรติพระเจ้าวรวงศ์เธอ
+                พระองค์เจ้าโสมสวลี กรมหมื่นสุทธนารีนาถ
+                ณ โรงเรียนบ้านบึง
+                "อุตสาหกรรมนุเคราะห์"
+
             </p>
+
 
             <p>
                 วันที่ 13 - 15 กรกฎาคม 2569
             </p>
 
+
             <div class="lesson">
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้</strong><br>
-                ข้าพเจ้าได้ทำจิตอาสาและรับความรู้เรื่องเอดส์ทั้งในการป้องกันและวิธีรักษาตนเองให้ห่างไกลจากโรคเอดส์
+
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้
+                </strong>
+
+                <br>
+
+                ข้าพเจ้าได้ทำจิตอาสาและรับความรู้เรื่องเอดส์
+                ทั้งในการป้องกันและวิธีรักษาตนเอง
+                ให้ห่างไกลจากโรคเอดส์
+
             </div>
 
+
         </div>
+
 
     </section>
 
 
 
-    <!-- =========================
+    <!-- =========================================
          CONTACT
-    ========================= -->
+    ========================================= -->
 
-    <section id="contact" class="page">
+    <section
+        id="contact"
+        class="page">
+
 
         <h1 class="page-title">
             ช่องทางการติดต่อ
@@ -1145,9 +2133,12 @@
 
         <div class="contact-container">
 
+
             <div class="contact-card">
 
-                <h2>Gmail</h2>
+                <h2>
+                    Gmail
+                </h2>
 
                 <p>
                     wakaruchidi@gmail.com
@@ -1158,7 +2149,9 @@
 
             <div class="contact-card">
 
-                <h2>Tel</h2>
+                <h2>
+                    Tel
+                </h2>
 
                 <p>
                     096-213-2648
@@ -1169,7 +2162,9 @@
 
             <div class="contact-card">
 
-                <h2>Instagram</h2>
+                <h2>
+                    Instagram
+                </h2>
 
                 <p>
                     wakaru_chi
@@ -1177,92 +2172,138 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
 
-    <!-- =========================
+    <!-- =========================================
          BOTTOM NAVIGATION
-    ========================= -->
+    ========================================= -->
 
     <nav class="bottom-nav">
 
-        <button class="nav-button active"
-                onclick="showPage('home', this)">
+
+        <button
+            class="nav-button active"
+            onclick="showPage('home', this)">
+
             หน้าหลัก
+
         </button>
 
-        <button class="nav-button"
-                onclick="showPage('preface', this)">
+
+        <button
+            class="nav-button"
+            onclick="showPage('preface', this)">
+
             คำนำ
+
         </button>
 
-        <button class="nav-button"
-                onclick="showPage('profile', this)">
+
+        <button
+            class="nav-button"
+            onclick="showPage('profile', this)">
+
             ประวัติส่วนตัว
+
         </button>
 
-        <button class="nav-button"
-                onclick="showPage('activities', this)">
+
+        <button
+            class="nav-button"
+            onclick="showPage('activities', this)">
+
             ผลงานและกิจกรรม
+
         </button>
 
-        <button class="nav-button"
-                onclick="showPage('contact', this)">
+
+        <button
+            class="nav-button"
+            onclick="showPage('contact', this)">
+
             ช่องทางการติดต่อ
+
         </button>
+
 
     </nav>
 
 
 
-    <!-- =========================
+    <!-- =========================================
          JAVASCRIPT
-    ========================= -->
+    ========================================= -->
 
     <script>
 
         function showPage(pageId, button) {
 
-            // ซ่อนทุกหน้า
-            const pages = document.querySelectorAll(".page");
 
-            pages.forEach(page => {
+            /* ซ่อนทุกหน้า */
+
+            const pages =
+                document.querySelectorAll(".page");
+
+            pages.forEach(function(page) {
+
                 page.classList.remove("active");
+
             });
 
 
-            // แสดงหน้าที่เลือก
-            const selectedPage = document.getElementById(pageId);
+
+            /* เปิดหน้าที่เลือก */
+
+            const selectedPage =
+                document.getElementById(pageId);
 
             if (selectedPage) {
+
                 selectedPage.classList.add("active");
+
             }
 
 
-            // ลบสถานะ active จากปุ่มทั้งหมด
-            const buttons = document.querySelectorAll(".nav-button");
 
-            buttons.forEach(btn => {
+            /* ปุ่มทั้งหมด */
+
+            const buttons =
+                document.querySelectorAll(".nav-button");
+
+            buttons.forEach(function(btn) {
+
                 btn.classList.remove("active");
+
             });
 
 
-            // เพิ่มสถานะ active ให้ปุ่มที่เลือก
+
+            /* ปุ่มที่กำลังเลือก */
+
             button.classList.add("active");
 
 
-            // เลื่อนกลับขึ้นด้านบน
+
+            /* กลับไปด้านบน */
+
             window.scrollTo({
+
                 top: 0,
+
                 behavior: "smooth"
+
             });
 
         }
 
     </script>
 
+
 </body>
+
 </html>
