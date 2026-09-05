@@ -1,112 +1,620 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
     <meta charset="UTF-8">
-
-    <!-- ทำให้เว็บไซต์แสดงผลได้ดีบนโทรศัพท์ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Welcome to my portfolio | Bunyanuch Keanna</title>
+    <title>Portfolio | Bunyanuch Keanna</title>
 
-    <!-- เชื่อมไฟล์ CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           ตั้งค่าพื้นฐาน
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: #020888;
+            color: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           ดาวพื้นหลัง
+        ========================= */
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            color: #FFFFFF;
+            font-size: 20px;
+            opacity: 0.75;
+            animation: floatStar linear infinite;
+        }
+
+        .star:nth-child(1) {
+            left: 5%;
+            top: 15%;
+            font-size: 18px;
+            animation-duration: 8s;
+        }
+
+        .star:nth-child(2) {
+            left: 15%;
+            top: 70%;
+            font-size: 28px;
+            animation-duration: 11s;
+        }
+
+        .star:nth-child(3) {
+            left: 28%;
+            top: 25%;
+            font-size: 15px;
+            animation-duration: 9s;
+        }
+
+        .star:nth-child(4) {
+            left: 42%;
+            top: 80%;
+            font-size: 24px;
+            animation-duration: 13s;
+        }
+
+        .star:nth-child(5) {
+            left: 55%;
+            top: 12%;
+            font-size: 17px;
+            animation-duration: 10s;
+        }
+
+        .star:nth-child(6) {
+            left: 67%;
+            top: 65%;
+            font-size: 30px;
+            animation-duration: 12s;
+        }
+
+        .star:nth-child(7) {
+            left: 78%;
+            top: 30%;
+            font-size: 18px;
+            animation-duration: 9s;
+        }
+
+        .star:nth-child(8) {
+            left: 90%;
+            top: 75%;
+            font-size: 25px;
+            animation-duration: 14s;
+        }
+
+        .star:nth-child(9) {
+            left: 85%;
+            top: 10%;
+            font-size: 14px;
+            animation-duration: 8s;
+        }
+
+        .star:nth-child(10) {
+            left: 35%;
+            top: 50%;
+            font-size: 20px;
+            animation-duration: 15s;
+        }
+
+        @keyframes floatStar {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-25px) translateX(15px) rotate(90deg);
+            }
+
+            50% {
+                transform: translateY(15px) translateX(-15px) rotate(180deg);
+            }
+
+            75% {
+                transform: translateY(-20px) translateX(10px) rotate(270deg);
+            }
+
+            100% {
+                transform: translateY(0) translateX(0) rotate(360deg);
+            }
+        }
+
+        /* =========================
+           ส่วนหลักของเว็บไซต์
+        ========================= */
+
+        .container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            padding-bottom: 110px;
+        }
+
+        .page {
+            display: none;
+            min-height: calc(100vh - 100px);
+            padding: 70px 8% 50px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           หน้าแรก
+        ========================= */
+
+        .home {
+            min-height: calc(100vh - 100px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .home-title {
+            font-size: clamp(60px, 10vw, 150px);
+            font-weight: 700;
+            color: #FFD700;
+            letter-spacing: 8px;
+            margin-bottom: 40px;
+            text-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+        }
+
+        /* =========================
+           รูปภาพ
+        ========================= */
+
+        .main-photo {
+            width: 33.33%;
+            max-width: 450px;
+            min-width: 250px;
+            aspect-ratio: 1 / 3;
+            object-fit: cover;
+
+            border: 4px solid #FFD700;
+            border-radius: 18px;
+
+            background: rgba(255,255,255,0.08);
+
+            display: block;
+            margin: 0 auto 40px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        /*
+        หากต้องการใส่รูป ให้เปลี่ยน
+
+        images/profile.jpg
+
+        เป็นตำแหน่งรูปของคุณ
+        */
+
+        /* =========================
+           หัวข้อแต่ละหน้า
+        ========================= */
+
+        .page-title {
+            color: #FFD700;
+            text-align: center;
+            font-size: clamp(45px, 6vw, 80px);
+            font-weight: 700;
+            margin-bottom: 45px;
+        }
+
+        /* =========================
+           ข้อมูลหน้าแรก
+        ========================= */
+
+        .profile-summary {
+            width: min(900px, 100%);
+            margin: auto;
+
+            background: rgba(255,255,255,0.07);
+            border: 2px solid rgba(255,215,0,0.7);
+            border-radius: 20px;
+
+            padding: 35px;
+            text-align: left;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .profile-summary p {
+            font-size: clamp(18px, 2vw, 25px);
+            line-height: 1.8;
+            margin-bottom: 5px;
+        }
+
+        .profile-summary strong {
+            color: #FFD700;
+        }
+
+        /* =========================
+           กล่องข้อความ
+        ========================= */
+
+        .content-box {
+            width: min(1000px, 100%);
+            margin: 0 auto 40px;
+
+            background: rgba(255,255,255,0.07);
+
+            border: 2px solid rgba(255,215,0,0.8);
+            border-radius: 20px;
+
+            padding: 40px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .sub-title {
+            color: #FFD700;
+            font-size: clamp(28px, 3vw, 42px);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .content-box p {
+            font-size: clamp(18px, 2vw, 23px);
+            line-height: 1.9;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           หน้า Portfolio ผลงาน
+        ========================= */
+
+        .activity {
+            width: min(1000px, 100%);
+            margin: 0 auto 50px;
+
+            background: rgba(255,255,255,0.07);
+
+            border: 2px solid rgba(255,215,0,0.8);
+            border-radius: 20px;
+
+            padding: 35px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .activity-number {
+            color: #FFD700;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .certificate {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            min-height: 250px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 30px;
+
+            border: 3px solid #FFD700;
+            border-radius: 15px;
+
+            background: rgba(0,0,0,0.15);
+
+            object-fit: contain;
+        }
+
+        /*
+        ช่องรูปภาพใบประกาศ
+
+        เปลี่ยนตัวอย่าง
+
+        images/activity1.jpg
+
+        เป็นชื่อไฟล์รูปจริง
+        */
+
+        .activity p {
+            font-size: clamp(17px, 1.8vw, 22px);
+            line-height: 1.9;
+            margin-bottom: 12px;
+        }
+
+        .activity strong {
+            color: #FFD700;
+        }
+
+        /* =========================
+           หน้าติดต่อ
+        ========================= */
+
+        .contact-box {
+            width: min(800px, 100%);
+            margin: auto;
+
+            background: rgba(255,255,255,0.07);
+
+            border: 2px solid #FFD700;
+            border-radius: 20px;
+
+            padding: 50px;
+
+            text-align: center;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .contact-item {
+            font-size: clamp(22px, 3vw, 32px);
+            margin: 25px 0;
+        }
+
+        .contact-label {
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        /* =========================
+           เมนูด้านล่าง
+        ========================= */
+
+        .bottom-nav {
+            position: fixed;
+            left: 50%;
+            bottom: 20px;
+
+            transform: translateX(-50%);
+
+            z-index: 100;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(2, 8, 136, 0.95);
+
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+
+            padding: 8px;
+
+            box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn {
+            font-family: 'Kanit', sans-serif;
+
+            color: #FFFFFF;
+            background: transparent;
+
+            border: 2px solid transparent;
+            border-radius: 8px;
+
+            padding: 12px 24px;
+
+            font-size: 17px;
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            color: #FFD700;
+            border-color: #FFD700;
+            transform: translateY(-3px);
+        }
+
+        .nav-btn.active {
+            color: #FFD700;
+            border-color: #FFD700;
+            background: rgba(255,215,0,0.08);
+        }
+
+        /* =========================
+           Responsive
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .page {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .main-photo {
+                width: 40%;
+            }
+
+            .bottom-nav {
+                width: calc(100% - 20px);
+                bottom: 10px;
+            }
+
+            .nav-btn {
+                padding: 10px 8px;
+                font-size: 13px;
+                flex: 1;
+            }
+
+            .content-box,
+            .activity,
+            .profile-summary,
+            .contact-box {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .home-title {
+                font-size: 55px;
+                letter-spacing: 3px;
+            }
+
+            .main-photo {
+                width: 55%;
+                min-width: 200px;
+            }
+
+            .page {
+                padding-top: 45px;
+            }
+
+            .page-title {
+                font-size: 45px;
+            }
+
+            .bottom-nav {
+                border-radius: 10px;
+                padding: 5px;
+            }
+
+            .nav-btn {
+                padding: 9px 3px;
+                font-size: 11px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-    <!-- ==============================
-         ส่วนหัวของหน้าแรก
-    =============================== -->
+    <!-- =========================
+         ดาวพื้นหลัง
+    ========================= -->
 
-    <header class="hero">
-        <h1>Welcome to my portfolio</h1>
-    </header>
+    <div class="stars">
 
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
 
-    <!-- ==============================
-         เนื้อหาหลัก
-    =============================== -->
-
-    <main class="container">
-
-
-        <!-- ==============================
-             กล่องที่ 1 : ข้อมูลส่วนตัว
-        =============================== -->
-
-        <section class="card">
-
-            <h2>ข้อมูลส่วนตัวของฉัน</h2>
+    </div>
 
 
-            <!--
-                รูปภาพของคุณ
-
-                หากชื่อรูปเป็น profile.jpg
-                ให้ใช้แบบนี้
-
-                images/profile.jpg
-            -->
-
-            <img
-                src="images/profile.jpg"
-                alt="รูปภาพของบุณยานุช เขียนนา"
-                class="profile-image"
-            >
+    <div class="container">
 
 
-            <!-- ข้อมูลส่วนตัว -->
+        <!-- =====================================================
+             หน้า 1 : HOME
+        ====================================================== -->
 
-            <div class="personal-info">
+        <section id="home" class="page active">
 
-                <p>ชื่อ น.ส.บุณยานุช เขียนนา</p>
+            <div class="home">
 
-                <p>Name Bunyanuch Keanna</p>
-
-                <p>กำลังศึกษาอยู่ระดับชั้นมัธยมศึกษาปีที่ 6</p>
-
-                <p>แผนการเรียน วิทยาศาสตร์-คณิตศาสตร์ (MSEP)</p>
-
-            </div>
-
-        </section>
+                <h1 class="home-title">
+                    PORTFOLIO
+                </h1>
 
 
+                <!-- =============================================
+                     รูปภาพหลัก
+                     เปลี่ยน images/profile.jpg เป็นรูปของคุณ
+                ============================================== -->
 
-        <!-- ==============================
-             กล่องที่ 2 : เป้าหมายและความสนใจ
-        =============================== -->
-
-        <section class="card">
-
-            <h2>เป้าหมายและความสนใจในการศึกษาต่อ</h2>
-
-
-            <div class="content-text">
-
-                <p>
-                    ฉันมีความสนใจที่จะศึกษาต่อ
-                    คณะพยาบาลศาสตร์ สาขาพยาบาล
-                    มหาวิทยาลัยมหิดล
-                </p>
+                <img
+                    src="images/profile.jpg"
+                    alt="รูปภาพของ Bunyanuch"
+                    class="main-photo"
+                >
 
 
-                <p>
-                    ตั้งแต่ระดับมัธยมศึกษาปีที่ 4
-                    ฉันได้ไป Open House ของมหาวิทยาลัยมหิดล
-                    และได้เข้าร่วมกิจกรรมของคณะพยาบาลศาสตร์
-                    ซึ่งในกิจกรรมได้เรียนรู้เกี่ยวกับการปฐมพยาบาล
-                    รวมถึงได้จำลองการดูแลรักษากับผู้ป่วย
-                    ทำให้เกิดความชอบและสนใจในสายอาชีพนี้ขึ้น
-                </p>
+                <div class="profile-summary">
 
+                    <p>
+                        <strong>ชื่อ-นามสกุล</strong>
+                        นางสาวบุณยานุช เขียนนา
+                    </p>
 
-                <p>
-                    หลังจากนั้นจึงได้ศึกษาเกี่ยวกับการเรียนพยาบาล
-                    รวมถึงการประกอบอาชีพ
-                    และเกิดความตั้งใจที่จะศึกษาต่อในคณะพยาบาลศาสตร์
-                </p>
+                    <p>
+                        <strong>Name</strong>
+                        Bunyanuch Keanna
+                    </p>
+
+                    <p>
+                        <strong>Nickname</strong>
+                        Cake
+                    </p>
+
+                    <p>
+                        <strong>ระดับชั้น</strong>
+                        มัธยมศึกษาชั้นปีที่ 6/3
+                    </p>
+
+                    <p>
+                        <strong>แผนการเรียน</strong>
+                        วิทยาศาสตร์-คณิตศาสตร์ (MSEP)
+                    </p>
+
+                    <p>
+                        <strong>โรงเรียนที่กำลังศึกษาอยู่</strong>
+                        โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"
+                    </p>
+
+                    <p>
+                        <strong>คณะ-สาขาและมหาวิทยาลัยที่สนใจศึกษาต่อ</strong>
+                        คณะพยาบาลศาสตร์ สาขาพยาบาลศาสตร์ มหาวิทยาลัยมหิดล
+                    </p>
+
+                </div>
 
             </div>
 
@@ -114,48 +622,25 @@
 
 
 
-        <!-- ==============================
-             กล่องที่ 3 : ผลงานและกิจกรรม
-        =============================== -->
+        <!-- =====================================================
+             หน้า 2 : คำนำ
+        ====================================================== -->
 
-        <section class="card">
+        <section id="preface" class="page">
 
-            <h2>ผลงานและกิจกรรมที่ได้เข้าร่วม</h2>
-
-
-            <p class="center-text">
-                สามารถดูผลงานและกิจกรรมที่ได้เข้าร่วมทั้งหมด
-                ได้ที่หน้าถัดไป
-            </p>
+            <h1 class="page-title">
+                คำนำ
+            </h1>
 
 
-            <!-- ปุ่มไปหน้าที่ 2 -->
-
-            <a href="activities.html" class="portfolio-button">
-                ดูผลงานและกิจกรรม
-            </a>
-
-        </section>
-
-
-
-        <!-- ==============================
-             กล่องที่ 4 : ช่องทางการติดต่อ
-        =============================== -->
-
-        <section class="card">
-
-            <h2>ช่องทางการติดต่อ</h2>
-
-
-            <div class="contact-info">
+            <div class="content-box">
 
                 <p>
-                    เบอร์โทรศัพท์ : 0962132648
+                    แฟ้มสะสมผลงาน (Portfolio) เล่มนี้ จัดทำขึ้นเพื่อเป็นตัวแทนในการนำเสนอข้อมูลเกี่ยวกับประวัติส่วนตัว ความรู้ ความสามารถ ทักษะ และกิจกรรมต่างๆ ของข้าพเจ้า โดยเฉพาะความสนใจและความมุ่งมั่นที่มีต่อการศึกษาต่อ
                 </p>
 
                 <p>
-                    Gmail : s37217@banbung.ac.th
+                    ภายในแฟ้มสะสมผลงานเล่มนี้ ประกอบด้วยประวัติส่วนตัว ผลการเรียน กิจกรรมที่ข้าพเจ้าได้เข้าร่วม
                 </p>
 
             </div>
@@ -163,22 +648,465 @@
         </section>
 
 
-    </main>
+
+        <!-- =====================================================
+             หน้า 3 : ประวัติส่วนตัว
+        ====================================================== -->
+
+        <section id="profile" class="page">
+
+            <h1 class="page-title">
+                ประวัติส่วนตัว
+            </h1>
+
+
+            <div class="content-box">
+
+                <h2 class="sub-title">
+                    ประวัติส่วนตัว
+                </h2>
+
+                <p>
+                    <strong>ชื่อ-นามสกุล</strong>
+                    นางสาวบุณยานุช เขียนนา
+                </p>
+
+                <p>
+                    <strong>Name</strong>
+                    Bunyanuch Keanna
+                </p>
+
+                <p>
+                    <strong>ชื่อเล่น</strong>
+                    เค้ก
+                </p>
+
+                <p>
+                    <strong>Nickname</strong>
+                    Cake
+                </p>
+
+                <p>
+                    <strong>อายุ</strong>
+                    17 ปี
+                </p>
+
+                <p>
+                    <strong>Age</strong>
+                    17 years old
+                </p>
+
+                <p>
+                    <strong>วันเกิด</strong>
+                    13/03/08
+                </p>
+
+                <p>
+                    <strong>สัญชาติ</strong>
+                    ไทย
+                </p>
+
+                <p>
+                    <strong>เชื้อชาติ</strong>
+                    ไทย
+                </p>
+
+                <p>
+                    <strong>ศาสนา</strong>
+                    พุทธ
+                </p>
+
+                <br>
+
+                <h2 class="sub-title">
+                    ประวัติการศึกษา
+                </h2>
+
+                <p>
+                    <strong>สถานศึกษา</strong>
+                    โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"
+                </p>
+
+                <p>
+                    <strong>แผนการเรียน</strong>
+                    วิทยาศาสตร์-คณิตศาสตร์ (MSEP)
+                </p>
+
+                <p>
+                    <strong>GPAX</strong>
+                    3.62
+                </p>
+
+            </div>
+
+        </section>
 
 
 
-    <!-- ==============================
-         ส่วนท้ายเว็บไซต์
-    =============================== -->
+        <!-- =====================================================
+             หน้า 4 : ผลงานและกิจกรรม
+        ====================================================== -->
 
-    <footer>
+        <section id="activities" class="page">
 
-        <p>
-            © 2026 Bunyanuch Keanna
-        </p>
+            <h1 class="page-title">
+                ผลงานและกิจกรรม
+            </h1>
 
-    </footer>
 
+            <!-- กิจกรรมที่ 1 -->
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    ผลงานที่ 1
+                </div>
+
+                <img
+                    src="images/activity1.jpg"
+                    alt="เกียรติบัตร MU X MOOC"
+                    class="certificate"
+                >
+
+                <p>
+                    ได้รับเกียรติบัตรจากการเรียนล่วงหน้าของ MU X MOOC เรื่องเพศวิถีและการให้คำปรึกษาทางเพศสำหรับวัยรุ่น ได้รับเมื่อวันที่ 11 สิงหาคม 2569
+                </p>
+
+                <p>
+                    <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
+                    การดูแลและป้องกันตัวเองจากสถานการณ์ต่าง ๆ จากการมีเพศสัมพันธ์ในวัยรุ่น
+                </p>
+
+            </div>
+
+
+
+            <!-- กิจกรรมที่ 2 -->
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    ผลงานที่ 2
+                </div>
+
+                <img
+                    src="images/activity2.jpg"
+                    alt="เกียรติบัตรการดูแลผู้ป่วยเบื้องต้น"
+                    class="certificate"
+                >
+
+                <p>
+                    ได้รับเกียรติบัตรจากสภากาชาดไทย หลักสูตรการดูแลผู้ป่วยเบื้องต้นที่บ้าน (Online) ได้รับเมื่อวันที่ 3 สิงหาคม 2569
+                </p>
+
+                <p>
+                    <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
+                    การดูแลผู้ป่วยติดเตียงด้วยตนเองที่บ้านให้สะอาดและปลอดภัย
+                </p>
+
+            </div>
+
+
+
+            <!-- กิจกรรมที่ 3 -->
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    ผลงานที่ 3
+                </div>
+
+                <img
+                    src="images/activity3.jpg"
+                    alt="เกียรติบัตร Stroke"
+                    class="certificate"
+                >
+
+                <p>
+                    ได้รับเกียรติบัตรจากสภากาชาดไทย ได้เข้าร่วมอบรมความรู้เรื่อง Stroke โรคหลอดเลือดสมอง ภัยเงียบใกล้ตัว (ออนไลน์) ได้รับเมื่อวันที่ 9 สิงหาคม 2569
+                </p>
+
+                <p>
+                    <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
+                    การสังเกตตนเองและคนรอบข้างเพื่อเฝ้าระวังจากโรค Stroke
+                </p>
+
+            </div>
+
+
+
+            <!-- กิจกรรมที่ 4 -->
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    ผลงานที่ 4
+                </div>
+
+                <img
+                    src="images/activity4.jpg"
+                    alt="การดูแลสิ่งแวดล้อมและอุบัติเหตุในผู้สูงอายุ"
+                    class="certificate"
+                >
+
+                <p>
+                    ได้รับเกียรติบัตรจากสภากาชาดไทย ได้เข้าร่วมอบรมความรู้เรื่อง การดูแลสิ่งแวดล้อมและอุบัติเหตุที่พบบ่อยในผู้สูงอายุ ได้รับเมื่อวันที่ 9 สิงหาคม 2569
+                </p>
+
+                <p>
+                    <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
+                    การสังเกตรอบบ้านและเฝ้าระวังไม่ให้คนสูงอายุในบ้านได้รับบาดเจ็บจากสิ่งที่อาจมองข้ามใกล้ตัว
+                </p>
+
+            </div>
+
+
+
+            <!-- กิจกรรมที่ 5 -->
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    ผลงานที่ 5
+                </div>
+
+                <img
+                    src="images/activity5.jpg"
+                    alt="เกียรติบัตรการบริจาคอวัยวะและเนื้อเยื่อ"
+                    class="certificate"
+                >
+
+                <p>
+                    ได้รับเกียรติบัตรจากสภากาชาดไทย หลักสูตรการบริจาคอวัยวะและเนื้อเยื่อ ได้รับเมื่อวันที่ 9 สิงหาคม 2569
+                </p>
+
+                <p>
+                    <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
+                    การบริจาคอวัยวะและเนื้อเยื่อให้ถูกวิธีเพื่อให้มีประสิทธิภาพมากที่สุด
+                </p>
+
+            </div>
+
+
+
+            <!-- กิจกรรมที่ 6 -->
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    ผลงานที่ 6
+                </div>
+
+                <img
+                    src="images/activity6.jpg"
+                    alt="เกียรติบัตร Heat Stroke"
+                    class="certificate"
+                >
+
+                <p>
+                    ได้รับเกียรติบัตรจากสภากาชาดไทย ได้เข้าร่วมอบรมความรู้เรื่อง Heat Stroke โรคลมแดดคร่าชีวิต (ออนไลน์) ได้รับเมื่อวันที่ 9 สิงหาคม 2569
+                </p>
+
+                <p>
+                    <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
+                    การระวังตัวเองจากโรค Heat Stroke โรคลมแดด
+                </p>
+
+            </div>
+
+
+
+            <!-- กิจกรรมที่ 7 -->
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    ผลงานที่ 7
+                </div>
+
+                <img
+                    src="images/activity7.jpg"
+                    alt="เกียรติบัตรการเลี้ยงลูกด้วยนมแม่"
+                    class="certificate"
+                >
+
+                <p>
+                    ได้รับเกียรติบัตรจากการเรียนล่วงหน้าของ MU X MOOC เรื่องการเลี้ยงลูกด้วยนมแม่ (Breastfeeding) ได้รับเมื่อวันที่ 12 สิงหาคม 2569
+                </p>
+
+                <p>
+                    <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
+                    ประโยชน์จากการให้นมแม่และข้อดีข้อเสียต่าง ๆ
+                </p>
+
+            </div>
+
+
+
+            <!-- กิจกรรมที่ 8 -->
+
+            <div class="activity">
+
+                <div class="activity-number">
+                    ผลงานที่ 8
+                </div>
+
+                <img
+                    src="images/activity8.jpg"
+                    alt="กิจกรรมแกนนำจิตอาสาป้องกันเอดส์"
+                    class="certificate"
+                >
+
+                <p>
+                    ได้รับเกียรติบัตรจากการเป็นคณะกรรมการจัดกิจกรรมอบรมแกนนำจิตอาสาป้องกันเอดส์เทิดพระเกียรติพระเจ้าวรวงศ์เธอ พระองค์เจ้าโสมสวลี กรมหมื่นสุทธนารีนาถ ณ โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"
+                </p>
+
+                <p>
+                    <strong>วันที่</strong>
+                    13 - 15 กรกฎาคม 2569
+                </p>
+
+                <p>
+                    <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
+                    ข้าพเจ้าได้ทำจิตอาสาและรับความรู้เรื่องเอดส์ทั้งในการป้องกันและวิธีรักษาตนเองให้ห่างไกลจากโรคเอดส์
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             หน้า 5 : ติดต่อ
+        ====================================================== -->
+
+        <section id="contact" class="page">
+
+            <h1 class="page-title">
+                ช่องทางการติดต่อ
+            </h1>
+
+
+            <div class="contact-box">
+
+                <div class="contact-item">
+
+                    <span class="contact-label">
+                        Gmail
+                    </span>
+
+                    <br>
+
+                    wakaruchidi@gmail.com
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span class="contact-label">
+                        Tel
+                    </span>
+
+                    <br>
+
+                    096-213-2648
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         เมนูด้านล่าง
+    ====================================================== -->
+
+    <nav class="bottom-nav">
+
+        <button
+            class="nav-btn active"
+            onclick="showPage('home', this)">
+            หน้าหลัก
+        </button>
+
+        <button
+            class="nav-btn"
+            onclick="showPage('preface', this)">
+            คำนำ
+        </button>
+
+        <button
+            class="nav-btn"
+            onclick="showPage('profile', this)">
+            ประวัติส่วนตัว
+        </button>
+
+        <button
+            class="nav-btn"
+            onclick="showPage('activities', this)">
+            ผลงานและกิจกรรม
+        </button>
+
+        <button
+            class="nav-btn"
+            onclick="showPage('contact', this)">
+            ช่องทางการติดต่อ
+        </button>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         JavaScript เปลี่ยนหน้า
+    ====================================================== -->
+
+    <script>
+
+        function showPage(pageId, button) {
+
+            // ซ่อนทุกหน้า
+            const pages = document.querySelectorAll('.page');
+
+            pages.forEach(function(page) {
+                page.classList.remove('active');
+            });
+
+
+            // แสดงหน้าที่เลือก
+            const selectedPage = document.getElementById(pageId);
+
+            selectedPage.classList.add('active');
+
+
+            // เอาสถานะ active ออกจากปุ่มทั้งหมด
+            const buttons = document.querySelectorAll('.nav-btn');
+
+            buttons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+
+
+            // เพิ่มสถานะ active ให้ปุ่มที่กด
+            button.classList.add('active');
+
+
+            // เลื่อนกลับขึ้นไปด้านบน
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+        }
+
+    </script>
 
 </body>
 </html>
