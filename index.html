@@ -476,60 +476,99 @@
         }
 
 
-        /* =========================================
-           IMAGE 3:1
-        ========================================= */
+        /* ==================================================
+   PROFILE IMAGE — ขนาดใหญ่พอดี
+================================================== */
 
-        .profile-image {
+.profile-frame {
 
-            width: 33.33%;
+    position: relative;
 
-            min-width: 280px;
+    /* ขนาดกรอบรูป */
+    width: min(500px, 55vw);
 
-            max-width: 650px;
+    /* กรอบสี่เหลี่ยม */
+    aspect-ratio: 1 / 1;
 
-            aspect-ratio: 3 / 1;
+    margin: 0 auto 40px;
 
-            margin:
-                55px auto 45px;
+    border: 4px solid #FFD700;
 
-            border:
-                4px solid #87CEFA;
+    border-radius: 20px;
 
-            border-radius: 20px;
+    background: rgba(255,255,255,0.05);
 
-            background: #F0FFFF;
+    overflow: hidden;
 
-            box-shadow:
-                0 10px 30px
-                rgba(135,206,250,0.35);
+    box-shadow:
+        0 0 10px #FFD700,
+        0 0 25px rgba(255,215,0,0.6),
+        inset 0 0 25px rgba(255,215,0,0.12);
 
-            overflow: hidden;
+}
 
-            display: flex;
 
-            justify-content: center;
+/* รูปภาพ */
 
-            align-items: center;
-        }
+.profile-frame img {
 
-        .profile-image img {
+    width: 100%;
 
-            width: 100%;
+    height: 100%;
 
-            height: 100%;
+    object-fit: cover;
 
-            object-fit: cover;
-        }
+    display: block;
 
-        .image-placeholder {
+}
 
-            text-align: center;
 
-            color: #0000FF;
+/* ช่องแสดงเมื่อยังไม่มีรูป */
 
-            padding: 20px;
-        }
+.image-placeholder {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    color: #FFFFFF;
+
+    font-size: 25px;
+
+}
+
+
+.image-placeholder span {
+
+    font-size: 70px;
+
+}
+
+
+.image-placeholder p {
+
+    font-size: 22px;
+
+}
+
+
+.image-placeholder small {
+
+    font-size: 14px;
+
+    margin-top: 10px;
+
+    opacity: 0.8;
+
+}
 
 
         /* =========================================
