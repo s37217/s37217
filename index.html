@@ -10,10 +10,6 @@
 
 <style>
 
-/* =========================
-   พื้นฐาน
-========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -137,6 +133,7 @@ body {
 }
 
 @keyframes cloudMove {
+
     0% {
         transform: translateX(-100px);
     }
@@ -148,9 +145,11 @@ body {
     100% {
         transform: translateX(-100px);
     }
+
 }
 
 @keyframes cloudMoveReverse {
+
     0% {
         transform: translateX(100px);
     }
@@ -162,25 +161,34 @@ body {
     100% {
         transform: translateX(100px);
     }
+
 }
 
 /* =========================
-   ปีกนางฟ้าลอยพื้นหลัง
+   ปีกนางฟ้าพื้นหลัง
 ========================= */
 
 .wing {
     position: fixed;
     z-index: -3;
-    color: #F0FFFF;
-    font-size: 45px;
-    opacity: 0.95;
-    pointer-events: none;
-    filter: drop-shadow(0 3px 5px rgba(135, 206, 250, 0.35));
 
-    animation: wingFloat 7s ease-in-out infinite;
+    color: #F0FFFF;
+
+    font-size: 45px;
+
+    opacity: 0.95;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(
+            0 3px 5px rgba(135,206,250,0.35)
+        );
+
+    animation:
+        wingFloat 7s ease-in-out infinite;
 }
 
-/* ใช้ตัวอักษรปีก */
 .wing::before {
     content: "꧁";
 }
@@ -193,7 +201,6 @@ body {
     top: 10%;
     left: 8%;
     font-size: 55px;
-    animation-delay: 0s;
 }
 
 .wing2 {
@@ -248,23 +255,36 @@ body {
 @keyframes wingFloat {
 
     0%,100% {
-        transform: translateY(0) rotate(-5deg);
+        transform:
+            translateY(0)
+            rotate(-5deg);
     }
 
     50% {
-        transform: translateY(-25px) rotate(5deg);
+        transform:
+            translateY(-25px)
+            rotate(5deg);
     }
+
 }
 
 /* =========================
-   หน้าต่างเว็บไซต์
+   หน้าเว็บไซต์
 ========================= */
 
 .page {
+
     display: none;
+
     min-height: 100vh;
-    padding: 55px 8% 150px;
-    animation: pageFade 0.6s ease;
+
+    padding:
+        55px
+        8%
+        150px;
+
+    animation:
+        pageFade 0.6s ease;
 }
 
 .page.active {
@@ -272,6 +292,7 @@ body {
 }
 
 @keyframes pageFade {
+
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -281,115 +302,205 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
 /* =========================
-   หัวข้อ
+   หัวข้อใหญ่
 ========================= */
 
 .main-title {
+
     text-align: center;
+
     color: #0000CD;
-    font-size: clamp(55px, 9vw, 115px);
+
+    font-size:
+        clamp(
+            55px,
+            9vw,
+            115px
+        );
+
     font-weight: 700;
+
     margin-top: 20px;
+
     margin-bottom: 40px;
+
     letter-spacing: 3px;
 
     text-shadow:
         0 5px 0 #CCFFFF,
-        0 10px 20px rgba(0, 0, 205, 0.15);
+        0 10px 20px
+        rgba(0,0,205,0.15);
 }
 
 .page-title {
+
     text-align: center;
+
     color: #0000CD;
-    font-size: clamp(42px, 6vw, 78px);
+
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            78px
+        );
+
     font-weight: 700;
+
     margin-bottom: 45px;
 
     text-shadow:
         0 4px 0 #CCFFFF,
-        0 8px 18px rgba(0, 0, 205, 0.15);
+        0 8px 18px
+        rgba(0,0,205,0.15);
 }
 
 /* =========================
-   กล่องเนื้อหา
+   กรอบเนื้อหา
 ========================= */
 
 .content-box {
-    width: min(1000px, 94%);
+
+    width:
+        min(
+            1000px,
+            94%
+        );
+
     margin: 0 auto;
 
-    background: rgba(255,255,255,0.92);
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.92
+        );
 
-    border: 3px solid #87CEFA;
+    border:
+        3px solid #87CEFA;
+
     border-radius: 30px;
 
     padding: 35px;
 
     box-shadow:
-        0 10px 30px rgba(135,206,250,0.25),
-        inset 0 0 20px rgba(204,255,255,0.7);
+        0 10px 30px
+        rgba(135,206,250,0.25),
+
+        inset 0 0 20px
+        rgba(204,255,255,0.7);
 
     position: relative;
 }
 
 .content-box::before,
 .content-box::after {
+
     content: "꧁";
+
     position: absolute;
+
     color: #F0FFFF;
+
     font-size: 55px;
-    text-shadow: 0 2px 8px #87CEFA;
+
+    text-shadow:
+        0 2px 8px #87CEFA;
 }
 
 .content-box::before {
+
     top: -30px;
     left: 25px;
 }
 
 .content-box::after {
+
     content: "꧂";
+
     right: 25px;
     bottom: -30px;
 }
 
-/* =========================
-   หน้าแรก
-========================= */
+/* =====================================================
+   รูป Portfolio หน้าแรก
+   สี่เหลี่ยมจัตุรัส 1:1
+===================================================== */
 
 .profile-image-box {
-    width: min(900px, 90%);
-    aspect-ratio: 3 / 1;
 
-    margin: 0 auto 40px;
+    width:
+        min(
+            430px,
+            75vw
+        );
 
-    border: 4px solid #87CEFA;
-    border-radius: 25px;
+    aspect-ratio: 1 / 1;
 
-    background: rgba(204,255,255,0.45);
+    margin:
+        0 auto 45px;
+
+    border:
+        5px solid #87CEFA;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #CCFFFF,
+            #FFFFFF
+        );
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     overflow: hidden;
 
     box-shadow:
-        0 8px 25px rgba(135,206,250,0.35);
+
+        0 12px 30px
+        rgba(135,206,250,0.35),
+
+        0 0 0 8px
+        rgba(204,255,255,0.5);
 }
+
+/* รูปภาพจริง */
 
 .profile-image-box img {
+
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
+
+    display: block;
 }
 
-.image-placeholder {
-    color: #0000FF;
-    font-size: 20px;
+/* ข้อความกรณียังไม่มีรูป */
+
+.profile-placeholder {
+
+    position: absolute;
+
     text-align: center;
+
+    color: #0000FF;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
     padding: 20px;
 }
 
@@ -398,23 +509,47 @@ body {
 ========================= */
 
 .profile-info {
+
     text-align: center;
+
     color: #0000FF;
 }
 
 .profile-name {
-    font-size: clamp(25px, 4vw, 40px);
+
+    font-size:
+        clamp(
+            25px,
+            4vw,
+            40px
+        );
+
     font-weight: 600;
+
     margin-bottom: 8px;
 }
 
 .profile-english {
-    font-size: clamp(20px, 3vw, 30px);
+
+    font-size:
+        clamp(
+            20px,
+            3vw,
+            30px
+        );
+
     margin-bottom: 15px;
 }
 
 .profile-detail {
-    font-size: clamp(17px, 2.3vw, 25px);
+
+    font-size:
+        clamp(
+            17px,
+            2.3vw,
+            25px
+        );
+
     margin: 8px 0;
 }
 
@@ -423,10 +558,20 @@ body {
 ========================= */
 
 .intro-text {
-    font-size: clamp(20px, 2.5vw, 28px);
+
+    font-size:
+        clamp(
+            20px,
+            2.5vw,
+            28px
+        );
+
     line-height: 2;
+
     text-align: justify;
+
     text-indent: 60px;
+
     color: #0000FF;
 }
 
@@ -435,54 +580,88 @@ body {
 ========================= */
 
 .bio-list {
+
     display: grid;
+
     gap: 16px;
 }
 
 .bio-row {
-    background: rgba(204,255,255,0.35);
 
-    border-left: 7px solid #87CEFA;
+    background:
+        rgba(
+            204,
+            255,
+            255,
+            0.35
+        );
+
+    border-left:
+        7px solid #87CEFA;
 
     border-radius: 15px;
 
-    padding: 15px 22px;
+    padding:
+        15px 22px;
 
-    font-size: clamp(17px, 2vw, 23px);
+    font-size:
+        clamp(
+            17px,
+            2vw,
+            23px
+        );
 
     color: #0000FF;
 }
 
 .bio-row strong {
+
     color: #0000CD;
 }
 
 /* =========================
-   ผลงาน
+   ผลงานและกิจกรรม
 ========================= */
 
 .activities {
-    width: min(1050px, 95%);
+
+    width:
+        min(
+            1050px,
+            95%
+        );
+
     margin: auto;
 
     display: grid;
+
     gap: 35px;
 }
 
 .activity-card {
-    background: rgba(255,255,255,0.94);
 
-    border: 3px solid #87CEFA;
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.94
+        );
+
+    border:
+        3px solid #87CEFA;
 
     border-radius: 28px;
 
     padding: 25px;
 
     box-shadow:
-        0 10px 25px rgba(135,206,250,0.25);
+        0 10px 25px
+        rgba(135,206,250,0.25);
 }
 
 .activity-number {
+
     text-align: center;
 
     color: #0000CD;
@@ -494,17 +673,21 @@ body {
     margin-bottom: 15px;
 }
 
-/* ช่องรูปภาพ */
+/* รูปผลงาน */
 
 .activity-image {
+
     width: 100%;
+
     max-width: 850px;
 
     aspect-ratio: 16 / 9;
 
-    margin: 0 auto 25px;
+    margin:
+        0 auto 25px;
 
-    border: 4px dashed #87CEFA;
+    border:
+        4px dashed #87CEFA;
 
     border-radius: 20px;
 
@@ -525,13 +708,18 @@ body {
 }
 
 .activity-image img {
+
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
 }
 
 .activity-placeholder {
+
     text-align: center;
+
     color: #0000FF;
 
     font-size: 20px;
@@ -540,9 +728,15 @@ body {
 }
 
 .activity-text {
+
     color: #0000FF;
 
-    font-size: clamp(17px, 2vw, 22px);
+    font-size:
+        clamp(
+            17px,
+            2vw,
+            22px
+        );
 
     line-height: 1.9;
 
@@ -550,15 +744,22 @@ body {
 }
 
 .activity-text strong {
+
     color: #0000CD;
 }
 
 /* =========================
-   ช่องทางติดต่อ
+   ติดต่อ
 ========================= */
 
 .contact-container {
-    width: min(800px, 94%);
+
+    width:
+        min(
+            800px,
+            94%
+        );
+
     margin: auto;
 
     display: grid;
@@ -567,9 +768,17 @@ body {
 }
 
 .contact-card {
-    background: rgba(255,255,255,0.94);
 
-    border: 3px solid #87CEFA;
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.94
+        );
+
+    border:
+        3px solid #87CEFA;
 
     border-radius: 25px;
 
@@ -579,19 +788,29 @@ body {
 
     color: #0000FF;
 
-    font-size: clamp(20px, 3vw, 30px);
+    font-size:
+        clamp(
+            20px,
+            3vw,
+            30px
+        );
 
     box-shadow:
-        0 8px 25px rgba(135,206,250,0.25);
+        0 8px 25px
+        rgba(135,206,250,0.25);
 
     transition: 0.3s;
 }
 
 .contact-card:hover {
-    transform: translateY(-7px) scale(1.02);
+
+    transform:
+        translateY(-7px)
+        scale(1.02);
 }
 
 .contact-icon {
+
     display: block;
 
     color: #0000CD;
@@ -606,15 +825,21 @@ body {
 ========================= */
 
 .bottom-menu {
+
     position: fixed;
 
     left: 50%;
 
     bottom: 18px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
-    width: min(1000px, 94%);
+    width:
+        min(
+            1000px,
+            94%
+        );
 
     display: flex;
 
@@ -624,36 +849,49 @@ body {
 
     padding: 12px;
 
-    background: rgba(255,255,255,0.92);
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.92
+        );
 
-    border: 3px solid #87CEFA;
+    border:
+        3px solid #87CEFA;
 
     border-radius: 35px;
 
     box-shadow:
-        0 8px 30px rgba(135,206,250,0.35);
+        0 8px 30px
+        rgba(135,206,250,0.35);
 
     backdrop-filter: blur(10px);
 
     z-index: 100;
 }
 
-/* ปุ่มเมนู */
+/* ปุ่ม */
 
 .menu-button {
+
     position: relative;
 
-    border: 2px solid #87CEFA;
+    border:
+        2px solid #87CEFA;
 
     background: #FFFFFF;
 
     color: #0000CD;
 
-    padding: 13px 22px;
+    padding:
+        13px 22px;
 
     border-radius: 20px;
 
-    font-family: "Kanit", sans-serif;
+    font-family:
+        "Kanit",
+        sans-serif;
 
     font-size: 17px;
 
@@ -666,26 +904,33 @@ body {
     min-width: 145px;
 }
 
-/* ปีกล้อมข้อความ */
+/* ปีกด้านซ้าย */
 
 .menu-button::before {
+
     content: "꧁";
+
     position: absolute;
 
     left: -9px;
 
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     color: #F0FFFF;
 
     font-size: 28px;
 
-    text-shadow: 0 1px 5px #87CEFA;
+    text-shadow:
+        0 1px 5px #87CEFA;
 }
 
+/* ปีกด้านขวา */
+
 .menu-button::after {
+
     content: "꧂";
 
     position: absolute;
@@ -694,25 +939,31 @@ body {
 
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     color: #F0FFFF;
 
     font-size: 28px;
 
-    text-shadow: 0 1px 5px #87CEFA;
+    text-shadow:
+        0 1px 5px #87CEFA;
 }
 
 .menu-button:hover {
+
     background: #CCFFFF;
 
-    transform: translateY(-5px);
+    transform:
+        translateY(-5px);
 
     box-shadow:
-        0 6px 15px rgba(135,206,250,0.4);
+        0 6px 15px
+        rgba(135,206,250,0.4);
 }
 
 .menu-button.active {
+
     background: #87CEFA;
 
     color: #0000CD;
@@ -720,7 +971,8 @@ body {
     border-color: #0000CD;
 
     box-shadow:
-        0 5px 18px rgba(0,0,205,0.25);
+        0 5px 18px
+        rgba(0,0,205,0.25);
 }
 
 /* =========================
@@ -730,20 +982,36 @@ body {
 @media (max-width: 700px) {
 
     .page {
-        padding: 35px 4% 180px;
+
+        padding:
+            35px
+            4%
+            180px;
     }
 
     .content-box {
-        padding: 22px 17px;
+
+        padding:
+            22px 17px;
+
         width: 96%;
     }
 
+    /* รูปหน้า Portfolio บนมือถือ */
+
     .profile-image-box {
-        width: 100%;
-        aspect-ratio: 16 / 9;
+
+        width: 80vw;
+
+        max-width: 360px;
+
+        aspect-ratio: 1 / 1;
+
+        border-radius: 25px;
     }
 
     .bottom-menu {
+
         bottom: 8px;
 
         width: 96%;
@@ -760,49 +1028,62 @@ body {
     }
 
     .menu-button {
+
         min-width: 115px;
 
-        padding: 10px 12px;
+        padding:
+            10px 12px;
 
         font-size: 14px;
     }
 
     .menu-button::before,
     .menu-button::after {
+
         font-size: 21px;
     }
 
     .intro-text {
+
         text-indent: 30px;
+
         text-align: left;
+
         line-height: 1.8;
     }
 
     .activity-card {
+
         padding: 15px;
     }
 
     .activity-text {
+
         text-align: left;
+
         line-height: 1.8;
     }
 
     .wing {
+
         opacity: 0.7;
     }
 
 }
 
 /* =========================
-   ซ่อน scrollbar
+   Scrollbar
 ========================= */
 
 ::-webkit-scrollbar {
+
     width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
+
     background: #87CEFA;
+
     border-radius: 20px;
 }
 
@@ -811,19 +1092,16 @@ body {
 
 <body>
 
+
 <!-- =========================
      พื้นหลัง
 ========================= -->
 
 <div class="background"></div>
 
-<!-- เมฆ -->
-
 <div class="cloud cloud1"></div>
 <div class="cloud cloud2"></div>
 <div class="cloud cloud3"></div>
-
-<!-- ปีกนางฟ้าลอย -->
 
 <div class="wing wing1"></div>
 <div class="wing wing2"></div>
@@ -835,9 +1113,9 @@ body {
 <div class="wing wing8"></div>
 
 
-<!-- ==================================================
-     หน้าแรก
-================================================== -->
+<!-- =====================================================
+     หน้าแรก Portfolio
+===================================================== -->
 
 <section id="home" class="page active">
 
@@ -845,59 +1123,101 @@ body {
         Portfolio
     </h1>
 
+
     <div class="content-box">
 
-        <!-- ==========================================
-             โค้ดสำหรับใส่รูปภาพหน้าหลัก
-             ========================================== -->
+
+        <!-- =============================================
+             รูป Portfolio
+             รูปเป็นสี่เหลี่ยมจัตุรัส
+             ============================================= -->
 
         <div class="profile-image-box">
 
-            <!-- เปลี่ยนชื่อไฟล์ profile.jpg เป็นรูปของคุณ -->
-
             <img
                 src="images/profile.jpg"
-                alt="รูปภาพ Portfolio"
+                alt="รูป Portfolio"
                 onerror="this.style.display='none';"
             >
 
+            <div class="profile-placeholder">
+
+                โค้ดสำหรับใส่รูปหน้า Portfolio
+
+                <br>
+
+                ใส่รูปที่
+
+                <br>
+
+                images/profile.jpg
+
+            </div>
 
         </div>
 
 
-        <!-- ข้อมูล -->
+        <!-- ข้อมูลส่วนตัว -->
 
         <div class="profile-info">
 
             <div class="profile-name">
-                ชื่อ-นามสกุล นางสาวบุณยานุช เขียนนา
+
+                ชื่อ-นามสกุล
+                นางสาวบุณยานุช เขียนนา
+
             </div>
+
 
             <div class="profile-english">
+
                 Name Bunyanuch Keanna
+
             </div>
 
+
             <div class="profile-detail">
+
                 Nickname Cake
+
             </div>
 
-            <div class="profile-detail">
-                ระดับชั้น มัธยมศึกษาชั้นปีที่ 6/3
-            </div>
 
             <div class="profile-detail">
-                แผนการเรียน วิทยาศาสตร์-คณิตศาสตร์ (MSEP)
+
+                ระดับชั้น
+                มัธยมศึกษาชั้นปีที่ 6/3
+
             </div>
 
+
             <div class="profile-detail">
+
+                แผนการเรียน
+                วิทยาศาสตร์-คณิตศาสตร์ (MSEP)
+
+            </div>
+
+
+            <div class="profile-detail">
+
                 โรงเรียนที่กำลังศึกษาอยู่
-                โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"
+                โรงเรียนบ้านบึง
+                "อุตสาหกรรมนุเคราะห์"
+
             </div>
 
+
             <div class="profile-detail">
+
                 คณะ-สาขาและมหาวิทยาลัยที่สนใจศึกษาต่อ
-                คณะพยาบาลศาสตร์ สาขาพยาบาลศาสตร์
+
+                <br>
+
+                คณะพยาบาลศาสตร์
+                สาขาพยาบาลศาสตร์
                 มหาวิทยาลัยมหิดล
+
             </div>
 
         </div>
@@ -907,9 +1227,9 @@ body {
 </section>
 
 
-<!-- ==================================================
-     หน้า 2 : คำนำ
-================================================== -->
+<!-- =====================================================
+     หน้า 2 คำนำ
+===================================================== -->
 
 <section id="introduction" class="page">
 
@@ -917,11 +1237,19 @@ body {
         คำนำ
     </h1>
 
+
     <div class="content-box">
 
         <p class="intro-text">
 
-            แฟ้มสะสมผลงาน (Portfolio) เล่มนี้ จัดทำขึ้นเพื่อเป็นตัวแทนในการนำเสนอข้อมูลเกี่ยวกับประวัติส่วนตัว ความรู้ ความสามารถ ทักษะ และกิจกรรมต่างๆ ของข้าพเจ้า โดยเฉพาะความสนใจและความมุ่งมั่นที่มีต่อการศึกษาต่อ ภายในแฟ้มสะสมผลงานเล่มนี้ ประกอบด้วยประวัติส่วนตัว ผลการเรียน กิจกรรมที่ข้าพเจ้าได้เข้าร่วม
+            แฟ้มสะสมผลงาน (Portfolio) เล่มนี้
+            จัดทำขึ้นเพื่อเป็นตัวแทนในการนำเสนอข้อมูลเกี่ยวกับ
+            ประวัติส่วนตัว ความรู้ ความสามารถ ทักษะ
+            และกิจกรรมต่างๆ ของข้าพเจ้า
+            โดยเฉพาะความสนใจและความมุ่งมั่นที่มีต่อการศึกษาต่อ
+            ภายในแฟ้มสะสมผลงานเล่มนี้
+            ประกอบด้วยประวัติส่วนตัว ผลการเรียน
+            กิจกรรมที่ข้าพเจ้าได้เข้าร่วม
 
         </p>
 
@@ -930,15 +1258,16 @@ body {
 </section>
 
 
-<!-- ==================================================
-     หน้า 3 : ประวัติส่วนตัว
-================================================== -->
+<!-- =====================================================
+     หน้า 3 ประวัติส่วนตัว
+===================================================== -->
 
 <section id="profile" class="page">
 
     <h1 class="page-title">
         ประวัติส่วนตัว
     </h1>
+
 
     <div class="content-box">
 
@@ -1001,7 +1330,9 @@ body {
 
             <div class="bio-row">
                 <strong>ประวัติการศึกษา</strong>
-                สถานศึกษา โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"
+                สถานศึกษา
+                โรงเรียนบ้านบึง
+                "อุตสาหกรรมนุเคราะห์"
             </div>
 
             <div class="bio-row">
@@ -1021,9 +1352,9 @@ body {
 </section>
 
 
-<!-- ==================================================
-     หน้า 4 : ผลงานและกิจกรรม
-================================================== -->
+<!-- =====================================================
+     หน้า 4 ผลงานและกิจกรรม
+===================================================== -->
 
 <section id="activities" class="page">
 
@@ -1031,10 +1362,11 @@ body {
         ผลงานและกิจกรรม
     </h1>
 
+
     <div class="activities">
 
 
-        <!-- ผลงานที่ 1 -->
+        <!-- ผลงาน 1 -->
 
         <div class="activity-card">
 
@@ -1047,13 +1379,16 @@ body {
                 <img
                     src="images/activity1.jpg"
                     alt="ผลงานที่ 1"
-                    onerror="this.style.display='none';"
                 >
 
                 <div class="activity-placeholder">
+
                     โค้ดสำหรับใส่รูปภาพที่หนึ่ง
+
                     <br>
+
                     images/activity1.jpg
+
                 </div>
 
             </div>
@@ -1066,7 +1401,10 @@ body {
 
                 <br><br>
 
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ
+                </strong>
+
                 การดูแลและป้องกันตัวเองจากสถานการณ์ต่าง ๆ
                 จากการมีเพศสัมพันธ์ในวัยรุ่น
 
@@ -1075,7 +1413,7 @@ body {
         </div>
 
 
-        <!-- ผลงานที่ 2 -->
+        <!-- ผลงาน 2 -->
 
         <div class="activity-card">
 
@@ -1088,13 +1426,16 @@ body {
                 <img
                     src="images/activity2.jpg"
                     alt="ผลงานที่ 2"
-                    onerror="this.style.display='none';"
                 >
 
                 <div class="activity-placeholder">
+
                     โค้ดสำหรับใส่รูปภาพที่สอง
+
                     <br>
+
                     images/activity2.jpg
+
                 </div>
 
             </div>
@@ -1107,15 +1448,19 @@ body {
 
                 <br><br>
 
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
-                การดูแลผู้ป่วยติดเตียงด้วยตนเองที่บ้านให้สะอาดและปลอดภัย
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ
+                </strong>
+
+                การดูแลผู้ป่วยติดเตียงด้วยตนเองที่บ้าน
+                ให้สะอาดและปลอดภัย
 
             </p>
 
         </div>
 
 
-        <!-- ผลงานที่ 3 -->
+        <!-- ผลงาน 3 -->
 
         <div class="activity-card">
 
@@ -1128,13 +1473,16 @@ body {
                 <img
                     src="images/activity3.jpg"
                     alt="ผลงานที่ 3"
-                    onerror="this.style.display='none';"
                 >
 
                 <div class="activity-placeholder">
+
                     โค้ดสำหรับใส่รูปภาพที่สาม
+
                     <br>
+
                     images/activity3.jpg
+
                 </div>
 
             </div>
@@ -1142,21 +1490,25 @@ body {
             <p class="activity-text">
 
                 ได้รับเกียรติบัตรจากสภากาชาดไทย
-                ได้เข้าร่วมอบรมความรู้เรื่อง Stroke โรคหลอดเลือดสมอง
-                ภัยเงียบ ใกล้ตัว (ออนไลน์)
+                ได้เข้าร่วมอบรมความรู้เรื่อง Stroke
+                โรคหลอดเลือดสมอง ภัยเงียบ ใกล้ตัว (ออนไลน์)
                 ได้รับเมื่อวันที่ 9 สิงหาคม 2569
 
                 <br><br>
 
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
-                การสังเกตตนเองและคนรอบข้างเพื่อเฝ้าระวังจากโรค Stroke
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ
+                </strong>
+
+                การสังเกตตนเองและคนรอบข้าง
+                เพื่อเฝ้าระวังจากโรค Stroke
 
             </p>
 
         </div>
 
 
-        <!-- ผลงานที่ 4 -->
+        <!-- ผลงาน 4 -->
 
         <div class="activity-card">
 
@@ -1169,13 +1521,16 @@ body {
                 <img
                     src="images/activity4.jpg"
                     alt="ผลงานที่ 4"
-                    onerror="this.style.display='none';"
                 >
 
                 <div class="activity-placeholder">
+
                     โค้ดสำหรับใส่รูปภาพที่สี่
+
                     <br>
+
                     images/activity4.jpg
+
                 </div>
 
             </div>
@@ -1183,14 +1538,18 @@ body {
             <p class="activity-text">
 
                 ได้รับเกียรติบัตรจากสภากาชาดไทย
-                ได้เข้าร่วมอบรมความรู้เรื่อง การดูแลสิ่งแวดล้อมและ
-                อุบัติเหตุที่พบบ่อยในผู้สูงอายุ
+                ได้เข้าร่วมอบรมความรู้เรื่อง
+                การดูแลสิ่งแวดล้อมและอุบัติเหตุที่พบบ่อยในผู้สูงอายุ
                 ได้รับเมื่อวันที่ 9 สิงหาคม 2569
 
                 <br><br>
 
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
-                การสังเกตรอบบ้านและเฝ้าระวังไม่ให้คนสูงอายุในบ้านได้รับบาดเจ็บ
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ
+                </strong>
+
+                การสังเกตรอบบ้านและเฝ้าระวัง
+                ไม่ให้คนสูงอายุในบ้านได้รับบาดเจ็บ
                 จากสิ่งที่อาจมองข้ามใกล้ตัว
 
             </p>
@@ -1198,7 +1557,7 @@ body {
         </div>
 
 
-        <!-- ผลงานที่ 5 -->
+        <!-- ผลงาน 5 -->
 
         <div class="activity-card">
 
@@ -1211,13 +1570,16 @@ body {
                 <img
                     src="images/activity5.jpg"
                     alt="ผลงานที่ 5"
-                    onerror="this.style.display='none';"
                 >
 
                 <div class="activity-placeholder">
+
                     โค้ดสำหรับใส่รูปภาพที่ห้า
+
                     <br>
+
                     images/activity5.jpg
+
                 </div>
 
             </div>
@@ -1230,7 +1592,10 @@ body {
 
                 <br><br>
 
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ
+                </strong>
+
                 การบริจาคอวัยวะและเนื้อเยื่อให้ถูกวิธี
                 เพื่อให้มีประสิทธิภาพมากที่สุด
 
@@ -1239,7 +1604,7 @@ body {
         </div>
 
 
-        <!-- ผลงานที่ 6 -->
+        <!-- ผลงาน 6 -->
 
         <div class="activity-card">
 
@@ -1252,13 +1617,16 @@ body {
                 <img
                     src="images/activity6.jpg"
                     alt="ผลงานที่ 6"
-                    onerror="this.style.display='none';"
                 >
 
                 <div class="activity-placeholder">
+
                     โค้ดสำหรับใส่รูปภาพที่หก
+
                     <br>
+
                     images/activity6.jpg
+
                 </div>
 
             </div>
@@ -1272,15 +1640,19 @@ body {
 
                 <br><br>
 
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
-                การระวังตัวเองจากโรค Heat Stroke โรคลมแดด
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ
+                </strong>
+
+                การระวังตัวเองจากโรค Heat Stroke
+                โรคลมแดด
 
             </p>
 
         </div>
 
 
-        <!-- ผลงานที่ 7 -->
+        <!-- ผลงาน 7 -->
 
         <div class="activity-card">
 
@@ -1293,13 +1665,16 @@ body {
                 <img
                     src="images/activity7.jpg"
                     alt="ผลงานที่ 7"
-                    onerror="this.style.display='none';"
                 >
 
                 <div class="activity-placeholder">
+
                     โค้ดสำหรับใส่รูปภาพที่เจ็ด
+
                     <br>
+
                     images/activity7.jpg
+
                 </div>
 
             </div>
@@ -1312,15 +1687,19 @@ body {
 
                 <br><br>
 
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
-                ประโยชน์จากการให้นมแม่และข้อดีข้อเสียต่าง ๆ
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ
+                </strong>
+
+                ประโยชน์จากการให้นมแม่
+                และข้อดีข้อเสียต่าง ๆ
 
             </p>
 
         </div>
 
 
-        <!-- ผลงานที่ 8 -->
+        <!-- ผลงาน 8 -->
 
         <div class="activity-card">
 
@@ -1333,23 +1712,26 @@ body {
                 <img
                     src="images/activity8.jpg"
                     alt="ผลงานที่ 8"
-                    onerror="this.style.display='none';"
                 >
 
                 <div class="activity-placeholder">
+
                     โค้ดสำหรับใส่รูปภาพที่แปด
+
                     <br>
+
                     images/activity8.jpg
+
                 </div>
 
             </div>
 
             <p class="activity-text">
 
-                ได้รับเกียรติบัตรจากการเป็นคณะกรรมการจัดกิจกรรมอบรม
-                แกนนำจิตอาสาป้องกันเอดส์เทิดพระเกียรติ
-                พระเจ้าวรวงศ์เธอ พระองค์เจ้าโสมสวลี
-                กรมหมื่นสุทธนารีนาถ
+                ได้รับเกียรติบัตรจากการเป็นคณะกรรมการ
+                จัดกิจกรรมอบรมแกนนำจิตอาสาป้องกันเอดส์
+                เทิดพระเกียรติพระเจ้าวรวงศ์เธอ
+                พระองค์เจ้าโสมสวลี กรมหมื่นสุทธนารีนาถ
                 ณ โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"
 
                 <br><br>
@@ -1358,9 +1740,13 @@ body {
 
                 <br><br>
 
-                <strong>สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ</strong>
+                <strong>
+                    สิ่งที่ได้รับจากการเข้าร่วมกิจกรรมนี้ คือ
+                </strong>
+
                 ข้าพเจ้าได้ทำจิตอาสาและรับความรู้เรื่องเอดส์
-                ทั้งในการป้องกันและวิธีรักษาตนเองให้ห่างไกลจากโรคเอดส์
+                ทั้งในการป้องกันและวิธีรักษาตนเอง
+                ให้ห่างไกลจากโรคเอดส์
 
             </p>
 
@@ -1371,9 +1757,9 @@ body {
 </section>
 
 
-<!-- ==================================================
-     หน้า 5 : ช่องทางการติดต่อ
-================================================== -->
+<!-- =====================================================
+     หน้า 5 ติดต่อ
+===================================================== -->
 
 <section id="contact" class="page">
 
@@ -1381,11 +1767,15 @@ body {
         ช่องทางการติดต่อ
     </h1>
 
+
     <div class="contact-container">
+
 
         <div class="contact-card">
 
-            <span class="contact-icon">✉</span>
+            <span class="contact-icon">
+                ✉
+            </span>
 
             Gmail
 
@@ -1398,7 +1788,9 @@ body {
 
         <div class="contact-card">
 
-            <span class="contact-icon">☎</span>
+            <span class="contact-icon">
+                ☎
+            </span>
 
             Tel
 
@@ -1411,7 +1803,9 @@ body {
 
         <div class="contact-card">
 
-            <span class="contact-icon">◎</span>
+            <span class="contact-icon">
+                ◎
+            </span>
 
             IG
 
@@ -1426,9 +1820,9 @@ body {
 </section>
 
 
-<!-- ==================================================
+<!-- =====================================================
      เมนูด้านล่าง
-================================================== -->
+===================================================== -->
 
 <nav class="bottom-menu">
 
@@ -1438,11 +1832,13 @@ body {
         หน้าหลัก
     </button>
 
+
     <button
         class="menu-button"
         onclick="showPage('introduction', this)">
         คำนำ
     </button>
+
 
     <button
         class="menu-button"
@@ -1450,11 +1846,13 @@ body {
         ประวัติส่วนตัว
     </button>
 
+
     <button
         class="menu-button"
         onclick="showPage('activities', this)">
         ผลงานและกิจกรรม
     </button>
+
 
     <button
         class="menu-button"
@@ -1468,43 +1866,46 @@ body {
 <script>
 
 /* =========================
-   เปลี่ยนหน้า
+   ระบบเปลี่ยนหน้า
 ========================= */
 
 function showPage(pageId, button) {
 
-    /* ซ่อนทุกหน้า */
-
-    const pages = document.querySelectorAll(".page");
+    const pages =
+        document.querySelectorAll(".page");
 
     pages.forEach(page => {
+
         page.classList.remove("active");
+
     });
 
 
-    /* แสดงหน้าที่เลือก */
-
-    const selectedPage = document.getElementById(pageId);
+    const selectedPage =
+        document.getElementById(pageId);
 
     selectedPage.classList.add("active");
 
 
-    /* เปลี่ยนปุ่ม Active */
-
-    const buttons = document.querySelectorAll(".menu-button");
+    const buttons =
+        document.querySelectorAll(".menu-button");
 
     buttons.forEach(btn => {
+
         btn.classList.remove("active");
+
     });
+
 
     button.classList.add("active");
 
 
-    /* กลับไปด้านบน */
-
     window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
     });
 
 }
