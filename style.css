@@ -1,0 +1,388 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Kanit", sans-serif;
+    background: #FFFFFF;
+    color: #0000FF;
+    overflow-x: hidden;
+}
+/* =========================
+   พื้นหลังตาราง
+========================= */
+.page {
+    min-height: 100vh;
+    padding: 50px 7% 150px;
+    background-color: #FFFFFF;
+    background-image:
+        linear-gradient(#CCFFFF 1px, transparent 1px),
+        linear-gradient(90deg, #CCFFFF 1px, transparent 1px);
+    background-size: 50px 50px;
+    position: relative;
+}
+/* =========================
+   เนื้อหา
+========================= */
+.content {
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 5;
+}
+/* =========================
+   หัวข้อ
+========================= */
+.main-title {
+    text-align: center;
+    color: #0000CD;
+    font-size: clamp(55px, 10vw, 120px);
+    font-weight: 700;
+    margin-bottom: 50px;
+    letter-spacing: 5px;
+}
+.page-title {
+    text-align: center;
+    color: #0000CD;
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 700;
+    margin-bottom: 45px;
+}
+/* =========================
+   กล่องข้อความ
+========================= */
+.box {
+    background: rgba(255, 255, 255, 0.9);
+    border: 3px solid #CCFFFF;
+    border-radius: 30px;
+    padding: 35px;
+    margin: 30px auto;
+    box-shadow:
+        0 10px 30px rgba(135, 206, 250, 0.25);
+    backdrop-filter: blur(4px);
+}
+.box h2 {
+    color: #0000CD;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.box h3 {
+    color: #0000CD;
+    font-size: 25px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.box p {
+    color: #0000FF;
+    font-size: 19px;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+.box strong {
+    color: #0000CD;
+}
+/* =========================
+   รูป Portfolio
+========================= */
+.profile-image {
+    display: block;
+    width: min(500px, 85vw);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin: 0 auto 40px;
+    border: 6px solid #CCFFFF;
+    border-radius: 25px;
+    background: #FFFFFF;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 255, 0.15);
+}
+/* =========================
+   ผลงาน
+========================= */
+.works-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, 1fr);
+    gap: 35px;
+}
+.work-card {
+    background:
+        rgba(255,255,255,0.92);
+    border: 3px solid #CCFFFF;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow:
+        0 8px 25px
+        rgba(135,206,250,0.2);
+}
+.work-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 4px solid #CCFFFF;
+    background: #FFFFFF;
+    display: block;
+    margin-bottom: 20px;
+}
+.work-card h3 {
+    color: #0000CD;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.work-card p {
+    color: #0000FF;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+/* =========================
+   ความสามารถ / งานอดิเรก
+========================= */
+.list-box {
+    max-width: 850px;
+}
+.big-list {
+    list-style: none;
+}
+.big-list li {
+    background:
+        rgba(255,255,255,0.85);
+    border: 2px solid #CCFFFF;
+    border-radius: 20px;
+    padding: 18px 25px;
+    margin: 15px 0;
+    color: #0000FF;
+    font-size: 25px;
+    transition: 0.3s;
+}
+.big-list li:hover {
+    transform: translateX(10px);
+    box-shadow:
+        0 5px 20px
+        rgba(135,206,250,0.3);
+}
+/* =========================
+   ติดต่อ
+========================= */
+.contact-box {
+    max-width: 800px;
+    text-align: center;
+}
+.contact-item {
+    color: #0000FF;
+    font-size: 28px;
+    margin: 25px 0;
+}
+.contact-label {
+    color: #0000CD;
+    font-weight: 600;
+}
+/* =========================
+   ปีกนางฟ้า
+========================= */
+.wing {
+    position: fixed;
+    z-index: 1;
+    color: #F0FFFF;
+    text-shadow:
+        0 0 8px #CCFFFF;
+    font-size: 65px;
+    opacity: 0.9;
+    pointer-events: none;
+    animation:
+        wingFloat 5s ease-in-out infinite;
+}
+.wing1 {
+    top: 8%;
+    left: 10%;
+}
+.wing2 {
+    top: 25%;
+    right: 8%;
+    animation-delay: 1s;
+}
+.wing3 {
+    top: 55%;
+    left: 5%;
+    animation-delay: 2s;
+}
+.wing4 {
+    top: 78%;
+    right: 12%;
+    animation-delay: 3s;
+}
+.wing5 {
+    top: 90%;
+    left: 25%;
+    animation-delay: 1.5s;
+}
+.wing6 {
+    top: 15%;
+    right: 30%;
+    animation-delay: 2.5s;
+}
+@keyframes wingFloat {
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(5deg);
+    }
+}
+/* =========================
+   เมฆ
+========================= */
+.cloud {
+    position: fixed;
+    z-index: 1;
+    color: #87CEFA;
+    opacity: 0.65;
+    font-size: 80px;
+    pointer-events: none;
+    animation:
+        cloudMove 18s ease-in-out infinite;
+}
+.cloud1 {
+    top: 12%;
+    left: -20px;
+}
+.cloud2 {
+    top: 42%;
+    right: -20px;
+    font-size: 100px;
+    animation-duration: 23s;
+}
+.cloud3 {
+    bottom: 18%;
+    left: 5%;
+    font-size: 65px;
+    animation-duration: 20s;
+}
+.cloud4 {
+    top: 70%;
+    right: 5%;
+    font-size: 75px;
+    animation-duration: 25s;
+}
+@keyframes cloudMove {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(80px);
+    }
+}
+/* =========================
+   เมนูด้านล่าง
+========================= */
+.bottom-nav {
+    position: fixed;
+    z-index: 100;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1200px, 95%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background:
+        rgba(255,255,255,0.95);
+    border: 3px solid #CCFFFF;
+    border-radius: 30px;
+    box-shadow:
+        0 5px 25px
+        rgba(135,206,250,0.35);
+    backdrop-filter: blur(8px);
+}
+/* =========================
+   ปุ่มเมนู
+========================= */
+.nav-button {
+    min-width: 160px;
+    padding: 14px 15px;
+    border: 3px solid #CCFFFF;
+    border-radius: 50px;
+    background: #FFFFFF;
+    color: #0000CD;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Kanit", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.nav-button::before {
+    content: "🪽";
+    margin-right: 6px;
+}
+.nav-button::after {
+    content: "🪽";
+    margin-left: 6px;
+}
+.nav-button:hover,
+.nav-button.active {
+    background: #F0FFFF;
+    transform:
+        translateY(-7px);
+    box-shadow:
+        0 8px 20px
+        rgba(135,206,250,0.35);
+}
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 900px) {
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+    .bottom-nav {
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+    .nav-button {
+        min-width: 150px;
+        white-space: nowrap;
+    }
+    .page {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    .box {
+        padding: 25px 20px;
+    }
+}
+@media (max-width: 600px) {
+    .page {
+        padding-top: 35px;
+        padding-bottom: 140px;
+    }
+    .box h2 {
+        font-size: 27px;
+    }
+    .box p {
+        font-size: 16px;
+    }
+    .big-list li {
+        font-size: 19px;
+    }
+    .contact-item {
+        font-size: 20px;
+    }
+    .wing {
+        font-size: 45px;
+    }
+    .cloud {
+        font-size: 55px;
+    }
+}
